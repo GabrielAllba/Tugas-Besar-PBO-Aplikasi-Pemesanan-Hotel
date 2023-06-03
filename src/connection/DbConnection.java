@@ -10,14 +10,14 @@ public class DbConnection {
     public static final String PATH = "localhost:3306/aplikasihotel";
     
     public static Connection makeConnection(){
-        if (CON == null){
+        
             try{
                 CON = DriverManager.getConnection(URL + PATH, "root", "");
                 System.out.println("Success!");
             }catch (Exception e){
                 System.out.println("Error");
             }
-        }
+        
         return CON;
     }
     

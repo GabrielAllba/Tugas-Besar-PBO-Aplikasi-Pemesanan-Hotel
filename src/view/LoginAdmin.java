@@ -159,7 +159,9 @@ public class LoginAdmin extends javax.swing.JFrame {
             
             if (r.next()){
                 JOptionPane.showMessageDialog(null, "Login berhasil");
-                this.dispose(); //close the form
+                this.dispose(); 
+                AdminHome a = new AdminHome();
+                a.setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(null, "Username atau password salah!");
                 txPassword.requestFocus();

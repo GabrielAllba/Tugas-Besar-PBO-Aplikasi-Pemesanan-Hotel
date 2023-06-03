@@ -30,14 +30,14 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="sidebarPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="jScrollPane2" pref="984" max="32767" attributes="0"/>
+              <Component id="jScrollPane2" pref="972" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="sidebarPanel" max="32767" attributes="0"/>
-          <Component id="jScrollPane2" pref="660" max="32767" attributes="0"/>
+          <Component id="jScrollPane2" pref="665" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -52,17 +52,13 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="coursePanel" alignment="0" max="32767" attributes="0"/>
-                      <Component id="logo" alignment="0" pref="121" max="32767" attributes="0"/>
-                      <Component id="lecturerPanel" alignment="0" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Component id="logo" min="-2" pref="125" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
               </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Component id="coursePanel1" alignment="0" max="32767" attributes="0"/>
-              </Group>
+              <Component id="coursePanel1" max="32767" attributes="0"/>
+              <Component id="coursePanel" alignment="0" max="32767" attributes="0"/>
+              <Component id="lecturerPanel" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -74,14 +70,9 @@
                   <Component id="lecturerPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="coursePanel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="438" max="32767" attributes="0"/>
-              </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="242" max="-2" attributes="0"/>
-                      <Component id="coursePanel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="342" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="coursePanel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -91,7 +82,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/assets/logo.png"/>
+              <Image iconType="3" name="/img/admin-icon.png"/>
             </Property>
           </Properties>
         </Component>
@@ -109,7 +100,6 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
-                  <Component id="lecturerLabel" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -117,22 +107,12 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="41" max="32767" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lecturerLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="lecturerLabel">
-              <Properties>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/assets/icons/lecturer.png"/>
-                </Property>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -154,10 +134,9 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="courseLabel1" alignment="0" pref="121" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel4" pref="101" max="32767" attributes="0"/>
+                      <Component id="jLabel4" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -165,9 +144,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="35" max="32767" attributes="0"/>
-                      <Component id="courseLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace pref="41" max="32767" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
@@ -175,14 +152,6 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="courseLabel1">
-              <Properties>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/assets/icons/book.png"/>
-                </Property>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -204,42 +173,24 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="courseLabel" alignment="0" pref="121" max="32767" attributes="0"/>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel3" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel3" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="33" max="32767" attributes="0"/>
-                      <Component id="courseLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="18" max="32767" attributes="0"/>
-                      </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="40" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="courseLabel">
-              <Properties>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/assets/icons/book.png"/>
-                </Property>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -393,9 +344,9 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="saveBtn1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="saveGradeBtn" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="cancelBtn1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cancelGradeBtn" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jScrollPane3" alignment="1" min="-2" pref="253" max="-2" attributes="0"/>
                               </Group>
@@ -410,19 +361,19 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="mataKuliahInput1" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
+                                          <Component id="namaGradeInput" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
                                           <Component id="mataKuliahLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="mataKuliahInput2" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
+                                          <Component id="keteranganInput" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
                                           <Component id="mataKuliahLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="addBtn1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addGradeBtn" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="editBtn1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="editGradeBtn" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="deleteBtn1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="deleteGradeBtn" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
@@ -436,22 +387,22 @@
                               <Component id="mataKuliahLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="addBtn1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="editBtn1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="deleteBtn1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addGradeBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="editGradeBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="deleteGradeBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                               <Component id="mataKuliahLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="mataKuliahInput1" min="-2" max="-2" attributes="0"/>
+                              <Component id="namaGradeInput" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                               <Component id="mataKuliahLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="mataKuliahInput2" min="-2" max="-2" attributes="0"/>
+                              <Component id="keteranganInput" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="saveBtn1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cancelBtn1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="saveGradeBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cancelGradeBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="jScrollPane3" min="-2" pref="131" max="-2" attributes="0"/>
@@ -461,7 +412,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JTextField" name="mataKuliahInput1">
+                    <Component class="javax.swing.JTextField" name="namaGradeInput">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Berlin Sans FB Demi" size="14" style="1"/>
@@ -476,7 +427,7 @@
                         <Property name="text" type="java.lang.String" value="Nama grade"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="cancelBtn1">
+                    <Component class="javax.swing.JButton" name="cancelGradeBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="99" type="rgb"/>
@@ -490,10 +441,10 @@
                         <Property name="text" type="java.lang.String" value="Batal"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelBtn1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelGradeBtnActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="saveBtn1">
+                    <Component class="javax.swing.JButton" name="saveGradeBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="7a" green="34" red="16" type="rgb"/>
@@ -507,7 +458,7 @@
                         <Property name="text" type="java.lang.String" value="Simpan"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveBtn1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveGradeBtnActionPerformed"/>
                       </Events>
                     </Component>
                     <Container class="javax.swing.JScrollPane" name="jScrollPane3">
@@ -522,13 +473,14 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="tableMataKuliah1">
+                        <Component class="javax.swing.JTable" name="tableGrade">
                           <Properties>
                             <Property name="autoCreateRowSorter" type="boolean" value="true"/>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="2" rowCount="4">
+                              <Table columnCount="3" rowCount="4">
                                 <Column editable="true" title="Title 1" type="java.lang.Object"/>
                                 <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                                <Column editable="true" title="Title 3" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -561,7 +513,7 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableMataKuliah1MouseClicked"/>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableGradeMouseClicked"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -575,7 +527,7 @@
                         <Property name="text" type="java.lang.String" value="Grade Hotel"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="mataKuliahInput2">
+                    <Component class="javax.swing.JTextField" name="keteranganInput">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Berlin Sans FB Demi" size="14" style="1"/>
@@ -590,7 +542,7 @@
                         <Property name="text" type="java.lang.String" value="Keterangan"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="addBtn1">
+                    <Component class="javax.swing.JButton" name="addGradeBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="99" red="0" type="rgb"/>
@@ -604,10 +556,10 @@
                         <Property name="text" type="java.lang.String" value="Tambah"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBtn1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addGradeBtnActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="editBtn1">
+                    <Component class="javax.swing.JButton" name="editGradeBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="1e" green="a8" red="ec" type="rgb"/>
@@ -621,10 +573,10 @@
                         <Property name="text" type="java.lang.String" value="Ubah"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editBtn1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editGradeBtnActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="deleteBtn1">
+                    <Component class="javax.swing.JButton" name="deleteGradeBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="99" type="rgb"/>
@@ -638,7 +590,7 @@
                         <Property name="text" type="java.lang.String" value="Hapus"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteBtn1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteGradeBtnActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -664,9 +616,9 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="saveBtn" min="-2" max="-2" attributes="0"/>
+                                      <Component id="saveProvinsiBtn" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="cancelBtn" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cancelProvinsiBtn" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jScrollPane1" min="-2" pref="253" max="-2" attributes="0"/>
                               </Group>
@@ -681,17 +633,17 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="mataKuliahInput" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
+                                          <Component id="namaProvinsiInput" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
                                           <Component id="mataKuliahLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                      <Component id="addBtn" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addProvinsiBtn" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="editBtn" min="-2" max="-2" attributes="0"/>
+                                      <Component id="editProvinsiBtn" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="deleteBtn" min="-2" max="-2" attributes="0"/>
+                                      <Component id="deleteProvinsiBtn" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
@@ -705,18 +657,18 @@
                               <Component id="mataKuliahLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="addBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="editBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="deleteBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addProvinsiBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="editProvinsiBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="deleteProvinsiBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="mataKuliahLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="mataKuliahInput" min="-2" max="-2" attributes="0"/>
+                              <Component id="namaProvinsiInput" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="saveBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cancelBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="saveProvinsiBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cancelProvinsiBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="jScrollPane1" min="-2" pref="131" max="-2" attributes="0"/>
@@ -726,7 +678,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JTextField" name="mataKuliahInput">
+                    <Component class="javax.swing.JTextField" name="namaProvinsiInput">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Berlin Sans FB Demi" size="14" style="1"/>
@@ -741,7 +693,7 @@
                         <Property name="text" type="java.lang.String" value="Nama provinsi"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="cancelBtn">
+                    <Component class="javax.swing.JButton" name="cancelProvinsiBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="99" type="rgb"/>
@@ -755,10 +707,10 @@
                         <Property name="text" type="java.lang.String" value="Batal"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelBtnActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelProvinsiBtnActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="saveBtn">
+                    <Component class="javax.swing.JButton" name="saveProvinsiBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="7a" green="34" red="16" type="rgb"/>
@@ -772,7 +724,7 @@
                         <Property name="text" type="java.lang.String" value="Simpan"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveBtnActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveProvinsiBtnActionPerformed"/>
                       </Events>
                     </Component>
                     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -787,11 +739,11 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="tableMataKuliah">
+                        <Component class="javax.swing.JTable" name="tableProvinsi">
                           <Properties>
                             <Property name="autoCreateRowSorter" type="boolean" value="true"/>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="2" rowCount="4">
+                              <Table columnCount="2" rowCount="5">
                                 <Column editable="true" title="Title 1" type="java.lang.Object"/>
                                 <Column editable="true" title="Title 2" type="java.lang.Object"/>
                               </Table>
@@ -827,7 +779,7 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableMataKuliahMouseClicked"/>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableProvinsiMouseClicked"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -841,7 +793,7 @@
                         <Property name="text" type="java.lang.String" value="Provinsi"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="addBtn">
+                    <Component class="javax.swing.JButton" name="addProvinsiBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="99" red="0" type="rgb"/>
@@ -855,10 +807,10 @@
                         <Property name="text" type="java.lang.String" value="Tambah"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBtnActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addProvinsiBtnActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="editBtn">
+                    <Component class="javax.swing.JButton" name="editProvinsiBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="1e" green="a8" red="ec" type="rgb"/>
@@ -872,10 +824,10 @@
                         <Property name="text" type="java.lang.String" value="Ubah"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editBtnActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editProvinsiBtnActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="deleteBtn">
+                    <Component class="javax.swing.JButton" name="deleteProvinsiBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="99" type="rgb"/>
@@ -889,7 +841,7 @@
                         <Property name="text" type="java.lang.String" value="Hapus"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteBtnActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteProvinsiBtnActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -915,9 +867,9 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="saveBtn2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="saveJenisHotelBtn" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="cancelBtn2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cancelJenisHotelBtn" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jScrollPane4" alignment="1" min="-2" pref="253" max="-2" attributes="0"/>
                               </Group>
@@ -932,19 +884,19 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="mataKuliahInput3" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
+                                          <Component id="namaJenisInput" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
                                           <Component id="mataKuliahLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="mataKuliahInput4" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
+                                          <Component id="deskripsiInput" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
                                           <Component id="mataKuliahLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="addBtn2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addJenisHotelBtn" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="editBtn2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="editJenisHotelBtn" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="deleteBtn2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="removeJenisHotelBtn" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
@@ -958,22 +910,22 @@
                               <Component id="mataKuliahLabel6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="addBtn2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="editBtn2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="deleteBtn2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addJenisHotelBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="editJenisHotelBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="removeJenisHotelBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                               <Component id="mataKuliahLabel5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="mataKuliahInput3" min="-2" max="-2" attributes="0"/>
+                              <Component id="namaJenisInput" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                               <Component id="mataKuliahLabel7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="mataKuliahInput4" min="-2" max="-2" attributes="0"/>
+                              <Component id="deskripsiInput" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="saveBtn2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cancelBtn2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="saveJenisHotelBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cancelJenisHotelBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="jScrollPane4" min="-2" pref="131" max="-2" attributes="0"/>
@@ -983,7 +935,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JTextField" name="mataKuliahInput3">
+                    <Component class="javax.swing.JTextField" name="namaJenisInput">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Berlin Sans FB Demi" size="14" style="1"/>
@@ -998,7 +950,7 @@
                         <Property name="text" type="java.lang.String" value="Jenis Hotel"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="cancelBtn2">
+                    <Component class="javax.swing.JButton" name="cancelJenisHotelBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="99" type="rgb"/>
@@ -1012,10 +964,10 @@
                         <Property name="text" type="java.lang.String" value="Batal"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelBtn2ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelJenisHotelBtnActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="saveBtn2">
+                    <Component class="javax.swing.JButton" name="saveJenisHotelBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="7a" green="34" red="16" type="rgb"/>
@@ -1029,7 +981,7 @@
                         <Property name="text" type="java.lang.String" value="Simpan"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveBtn2ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveJenisHotelBtnActionPerformed"/>
                       </Events>
                     </Component>
                     <Container class="javax.swing.JScrollPane" name="jScrollPane4">
@@ -1044,13 +996,14 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="tableMataKuliah2">
+                        <Component class="javax.swing.JTable" name="tableJenisHotel">
                           <Properties>
                             <Property name="autoCreateRowSorter" type="boolean" value="true"/>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="2" rowCount="4">
+                              <Table columnCount="3" rowCount="4">
                                 <Column editable="true" title="Title 1" type="java.lang.Object"/>
                                 <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                                <Column editable="true" title="Title 3" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -1083,7 +1036,7 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableMataKuliah2MouseClicked"/>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableJenisHotelMouseClicked"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -1097,7 +1050,7 @@
                         <Property name="text" type="java.lang.String" value="Jenis Hotel"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="mataKuliahInput4">
+                    <Component class="javax.swing.JTextField" name="deskripsiInput">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Berlin Sans FB Demi" size="14" style="1"/>
@@ -1112,7 +1065,7 @@
                         <Property name="text" type="java.lang.String" value="Deskripsi"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="addBtn2">
+                    <Component class="javax.swing.JButton" name="addJenisHotelBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="99" red="0" type="rgb"/>
@@ -1126,10 +1079,10 @@
                         <Property name="text" type="java.lang.String" value="Tambah"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBtn2ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addJenisHotelBtnActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="editBtn2">
+                    <Component class="javax.swing.JButton" name="editJenisHotelBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="1e" green="a8" red="ec" type="rgb"/>
@@ -1143,10 +1096,10 @@
                         <Property name="text" type="java.lang.String" value="Ubah"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editBtn2ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editJenisHotelBtnActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="deleteBtn2">
+                    <Component class="javax.swing.JButton" name="removeJenisHotelBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="99" type="rgb"/>
@@ -1160,7 +1113,7 @@
                         <Property name="text" type="java.lang.String" value="Hapus"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteBtn2ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removeJenisHotelBtnActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
