@@ -4,6 +4,9 @@
  */
 package view;
 
+import view.admin.LoginAdmin;
+import view.adminHotel.LoginAdminHotel;
+
 /**
  *
  * @author riel
@@ -142,6 +145,8 @@ public class LandingPage extends javax.swing.JFrame {
 
     private void hotelOwnerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hotelOwnerButtonActionPerformed
         this.dispose();
+        LoginAdminHotel l = new LoginAdminHotel();
+        l.setVisible(true);
     }//GEN-LAST:event_hotelOwnerButtonActionPerformed
 
     private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed

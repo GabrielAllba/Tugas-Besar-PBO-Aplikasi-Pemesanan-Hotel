@@ -33,4 +33,8 @@ public class ProvinsiControll {
     public void deleteDataProvinsi(int id){
         pDao.deleteProvinsi(id);
     }
+    public List<Provinsi> showListProvinsi(){
+        List<Provinsi> dataProvinsi = pDao.showProvinsi("");
+        return dataProvinsi;
+    }
 }
