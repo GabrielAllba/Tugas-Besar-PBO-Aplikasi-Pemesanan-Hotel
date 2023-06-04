@@ -33,4 +33,8 @@ public class JenisHotelControll {
     public void deleteDataJenisHotel(int id){
         pDao.deleteJenisHotel(id);
     }
+    public List<JenisHotel> showListJenisHotel(){
+        List<JenisHotel> dataJenisHotel = pDao.showJenisHotel("");
+        return dataJenisHotel;
+    }
 }

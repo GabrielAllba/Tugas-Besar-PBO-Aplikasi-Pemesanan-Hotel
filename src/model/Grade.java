@@ -28,4 +28,8 @@ public class Grade {
     public void setKeterangan(String k){
         this.keterangan = k;
     }
+    @Override
+    public String toString(){
+        return nama;
+    }
 }

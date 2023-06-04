@@ -11,10 +11,12 @@ import connection.DbConnection;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
 import view.LandingPage;
+import model.HotelAdmin;
 
 public class LoginAdminHotel extends javax.swing.JFrame {
-
     public static String hashPasswordMd5(String input){
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -179,11 +181,21 @@ public class LoginAdminHotel extends javax.swing.JFrame {
                     +"' and Password='"+ hashPasswordMd5(txPassword.getText()) + "'";
             ResultSet r = s.executeQuery(sql);
             
+            List<HotelAdmin> list = new ArrayList<HotelAdmin>();
+            
             if (r.next()){
+                HotelAdmin p = new HotelAdmin();
+                
+                p = new HotelAdmin(r.getInt("id"), r.getString("username"), r.getString("email"), r.getString("password"), BigInteger.valueOf(r.getLong("pemasukan")));
+                 
                 JOptionPane.showMessageDialog(null, "Login berhasil");
                 this.dispose(); 
+                
                 AdminHotelHome a = new AdminHotelHome();
+                a.idValueInput.setText(""+p.getId());
+                a.userNameValueInput.setText(p.getUsername());
                 a.setVisible(true);
+                
             }else{
                 JOptionPane.showMessageDialog(null, "Username atau password salah!");
                 txPassword.requestFocus();

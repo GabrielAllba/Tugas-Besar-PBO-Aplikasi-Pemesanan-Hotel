@@ -28,4 +28,8 @@ public class JenisHotel {
     public void setDeskripsi(String k){
         this.deskripsi = k;
     }
+    @Override
+    public String toString(){
+        return namaJenis;
+    }
 }

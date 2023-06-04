@@ -33,4 +33,8 @@ public class GradeControll {
     public void deleteDataGrade(int id){
         pDao.deleteGrade(id);
     }
+    public List<Grade> showListGrade(){
+        List<Grade> dataGrade = pDao.showGrade("");
+        return dataGrade;
+    }
 }

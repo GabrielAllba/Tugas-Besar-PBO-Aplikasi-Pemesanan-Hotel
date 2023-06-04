@@ -34,7 +34,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="sidebarPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="jScrollPane2" pref="972" max="32767" attributes="0"/>
+              <Component id="jScrollPane2" pref="1010" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -43,7 +43,7 @@
           <Component id="sidebarPanel" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
               <Component id="jScrollPane2" min="-2" pref="808" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -106,7 +106,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jLabel1" alignment="0" pref="137" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -143,17 +143,17 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel4" max="32767" attributes="0"/>
+                      <Component id="jLabel4" pref="117" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="41" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <EmptySpace pref="45" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -190,9 +190,9 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="40" max="32767" attributes="0"/>
+                      <EmptySpace pref="30" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -257,10 +257,10 @@
                               <Component id="headerPanel" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="contentPanel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="contentPanel1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="contentPanel4" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="fasilitasContentPanel" max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="contentPanel4" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -274,16 +274,11 @@
                           <Component id="headerPanel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="contentPanel" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="contentPanel4" min="-2" max="-2" attributes="0"/>
-                                      <Component id="contentPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="64" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="contentPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="contentPanel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="fasilitasContentPanel" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace pref="156" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -306,15 +301,52 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="titleContent" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel2" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
+                                  <Component id="jLabel5" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="userNameValueInput" min="-2" pref="104" max="-2" attributes="0"/>
+                                  <Component id="idValueInput" min="-2" pref="54" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace pref="14" max="32767" attributes="0"/>
+                              <Component id="addPendaftaran" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="editTemaBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="deleteTemaBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="titleContent" min="-2" pref="440" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="255" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="45" max="32767" attributes="0"/>
-                              <Component id="titleContent" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="idValueInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="userNameValueInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="13" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="titleContent" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="deleteTemaBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="editTemaBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addPendaftaran" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -329,8 +361,99 @@
                           <Font name="Tahoma" size="24" style="1"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="Management aplikasi"/>
+                        <Property name="text" type="java.lang.String" value="Admin Hotel"/>
                       </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel2">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="1"/>
+                        </Property>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
+                        <Property name="text" type="java.lang.String" value="ID : "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel5">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="1"/>
+                        </Property>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
+                        <Property name="text" type="java.lang.String" value="Username : "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="idValueInput">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="1"/>
+                        </Property>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="userNameValueInput">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="1"/>
+                        </Property>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="editTemaBtn">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="1e" green="a8" red="ec" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Ubah"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editTemaBtnActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="deleteTemaBtn">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="99" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Hapus"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteTemaBtnActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="addPendaftaran">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="99" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Tambah"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addPendaftaranActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -362,9 +485,9 @@
                                           <Component id="jenisHotelDropdown" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
                                           <Component id="mataKuliahLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="lokasiHotelDropdown" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
-                                          <Component id="namaHotelInput1" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
+                                          <Component id="alamatLengkapInput" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
                                           <Component id="mataKuliahLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="namaHotelInput2" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
+                                          <Component id="deskripsiHotelInput" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
                                           <Component id="mataKuliahLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="mataKuliahLabel1" alignment="0" min="-2" pref="303" max="-2" attributes="0"/>
                                           <Component id="mataKuliahLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -381,17 +504,17 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="setTimeCheckout" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
+                                          <Component id="mataKuliahLabel10" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="mataKuliahLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="saveHotelBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="saveHotelBtn" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="showCheckoutTime" min="-2" pref="97" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="cancelProvinsiBtn" min="-2" max="-2" attributes="0"/>
+                                              <Component id="cancelHotelBtn" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="showCheckoutTime" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -417,11 +540,11 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="mataKuliahLabel5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="namaHotelInput1" min="-2" pref="42" max="-2" attributes="0"/>
+                              <Component id="alamatLengkapInput" min="-2" pref="42" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="mataKuliahLabel7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="namaHotelInput2" min="-2" pref="42" max="-2" attributes="0"/>
+                              <Component id="deskripsiHotelInput" min="-2" pref="42" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="mataKuliahLabel8" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -444,10 +567,10 @@
                                   <Component id="showCheckoutTime" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="showCheckinTime" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="38" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="saveHotelBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cancelProvinsiBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cancelHotelBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -470,7 +593,7 @@
                         <Property name="text" type="java.lang.String" value="Nama Hotel"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="cancelProvinsiBtn">
+                    <Component class="javax.swing.JButton" name="cancelHotelBtn">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="99" type="rgb"/>
@@ -484,7 +607,7 @@
                         <Property name="text" type="java.lang.String" value="Batal"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelProvinsiBtnActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelHotelBtnActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="saveHotelBtn">
@@ -507,7 +630,7 @@
                     <Component class="javax.swing.JLabel" name="mataKuliahLabel1">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="24" style="1"/>
+                          <Font name="Tahoma" size="18" style="1"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="text" type="java.lang.String" value="Form Pendaftaran Hotel"/>
@@ -555,12 +678,15 @@
                         <Property name="text" type="java.lang.String" value="Lokasi Hotel"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="namaHotelInput1">
+                    <Component class="javax.swing.JTextField" name="alamatLengkapInput">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Berlin Sans FB Demi" size="14" style="1"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="alamatLengkapInputActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="mataKuliahLabel5">
                       <Properties>
@@ -570,7 +696,7 @@
                         <Property name="text" type="java.lang.String" value="Alamat Lengkap"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="namaHotelInput2">
+                    <Component class="javax.swing.JTextField" name="deskripsiHotelInput">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Berlin Sans FB Demi" size="14" style="1"/>
@@ -656,7 +782,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="contentPanel1">
+                <Container class="javax.swing.JPanel" name="fasilitasContentPanel">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -673,33 +799,15 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="mataKuliahLabel3" min="-2" pref="263" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="mataKuliahLabel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="221" max="32767" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="0" pref="249" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
-                  <SubComponents>
-                    <Component class="javax.swing.JLabel" name="mataKuliahLabel3">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="24" style="1"/>
-                        </Property>
-                        <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="Fasilitas Hotel"/>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
                 </Container>
                 <Container class="javax.swing.JPanel" name="contentPanel4">
                   <Properties>
@@ -719,13 +827,15 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="mataKuliahLabel11" min="-2" pref="302" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jScrollPane6" min="-2" pref="282" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="226" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="showHotelBtn" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="jScrollPane6" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="mataKuliahLabel11" min="-2" pref="302" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="14" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -734,9 +844,11 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="mataKuliahLabel11" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="jScrollPane6" min="-2" pref="390" max="-2" attributes="0"/>
-                              <EmptySpace pref="176" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="showHotelBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jScrollPane6" min="-2" pref="357" max="-2" attributes="0"/>
+                              <EmptySpace pref="21" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -754,7 +866,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="tableJenisHotel2">
+                        <Component class="javax.swing.JTable" name="tableHotel">
                           <Properties>
                             <Property name="autoCreateRowSorter" type="boolean" value="true"/>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
@@ -770,7 +882,7 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableJenisHotel2MouseClicked"/>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableHotelMouseClicked"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -783,6 +895,23 @@
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="text" type="java.lang.String" value="List Hotel"/>
                       </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="showHotelBtn">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="99" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Lihat berdasarkan kepemilikanmu"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="showHotelBtnActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
