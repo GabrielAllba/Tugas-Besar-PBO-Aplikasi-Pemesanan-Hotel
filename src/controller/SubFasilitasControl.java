@@ -26,6 +26,13 @@ public class SubFasilitasControl {
         return tableSubFasilitas;
     }
     
+    public TableSubFasilitas showSubFasilitasByHotel(int idhotel){
+        List<SubFasilitas> dataSubFasilitas = pDao.showSubFasilitasByHotel(idhotel);
+        TableSubFasilitas tableSubFasilitas = new TableSubFasilitas(dataSubFasilitas);
+        
+        return tableSubFasilitas;
+    }
+    
     public void updateDataSubFasilitas(SubFasilitas p){
         pDao.updateSubFasilitas(p);
     }

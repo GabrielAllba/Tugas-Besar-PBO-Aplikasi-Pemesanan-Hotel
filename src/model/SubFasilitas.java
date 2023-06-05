@@ -4,10 +4,11 @@ public class SubFasilitas {
     private int id;
     private int idTema;
     private String nama;
-    
+    private int id_hotel;
 
-    public SubFasilitas(int id, int idTema, String nama) {
+    public SubFasilitas(int id, int idTema,int id_hotel, String nama) {
         this.id = id;
+        this.id_hotel = id_hotel;
         this.idTema = idTema;
         this.nama = nama;
     }
@@ -20,6 +21,9 @@ public class SubFasilitas {
     public String getNama() {
         return nama;
     }
+    public int getIdHotel(){
+        return id_hotel;
+    }
     public void setId(int id) {
         this.id = id;
     }
@@ -28,6 +32,9 @@ public class SubFasilitas {
     }
     public void setNama(String nama) {
         this.nama = nama;
+    }
+    public void setIdHotel(int id){
+        this.id_hotel = id;
     }
     @Override
     public String toString(){

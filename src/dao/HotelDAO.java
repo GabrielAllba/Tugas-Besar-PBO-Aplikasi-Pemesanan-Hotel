@@ -13,6 +13,39 @@ public class HotelDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
     
+    public int checkIdHotelAdmin(int idHotel){
+        con = dbCon.makeConnection();
+        
+        String sql = "SELECT id_hotel_admin from hotel where id = '"+idHotel+"'";
+        
+        System.out.println(sql);
+        
+        Hotel list = new Hotel(0);
+        
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            
+            if(rs!=null){
+                while(rs.next()){
+                    list = new Hotel(rs.getInt("id_hotel_admin"));
+                    
+                }
+                
+            }
+            rs.close();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error reading database...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+        
+        return list.getId_hotel_admin();
+        
+    }
+    
     public void insertHotel(Hotel p){
         con = dbCon.makeConnection();
         
@@ -67,7 +100,38 @@ public class HotelDAO {
         
         return list;
     }
-    
+    public List<Hotel> detailHotel(int id){
+        con = dbCon.makeConnection();
+        
+        String sql = "SELECT * FROM hotel where id = '"+id+"'";
+        System.out.println("Mengambil data Hotel...");
+        
+        List<Hotel> list = new ArrayList<>();
+        
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            
+            if(rs!=null){
+                while(rs.next()){
+                    Hotel p = new Hotel(rs.getInt("id"), rs.getInt("id_hotel_admin"), rs.getInt("id_jenis"), rs.getInt("id_provinsi"), rs.getInt("id_grade"), 
+                            rs.getString("namaHotel"), rs.getString("detailLokasi"), rs.getString("deskripsi"), rs.getString("fasilitas"), rs.getString("checkinTime"), rs.getString("checkoutTime"),
+                    rs.getString("status"), BigInteger.valueOf(rs.getLong("pemasukan")));
+                    list.add(p);
+                }
+                
+            }
+            rs.close();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error reading database...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+        
+        return list;
+    }
     public List<Hotel> showHotelByAdmin(int id){
         con = dbCon.makeConnection();
         

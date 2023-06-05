@@ -17,6 +17,10 @@ public class Hotel {
     private String status;
     private BigInteger pemasukan;
 
+    public Hotel(int id_hotel_admin){
+        this.id_hotel_admin = id_hotel_admin;
+    }
+    
     public Hotel(int id, int id_hotel_admin, int id_jenis, int id_provinsi, int id_grade, String namaHotel, String detailLokasi, String deskripsi, String fasilitas, String checkinTime, String checkoutTime, String status, BigInteger pemasukan) {
         this.id = id;
         this.id_hotel_admin = id_hotel_admin;

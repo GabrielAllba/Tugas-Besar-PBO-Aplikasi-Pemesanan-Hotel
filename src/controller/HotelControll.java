@@ -19,6 +19,10 @@ public class HotelControll {
         pDao.insertHotel(p);
     }
     
+    public int checkIdHotelAdmin(int idHotel){
+        return pDao.checkIdHotelAdmin(idHotel);
+    }
+    
     public TableHotel showHotel(String query){
         List<Hotel> dataHotel = pDao.showHotel(query);
         TableHotel tableHotel = new TableHotel(dataHotel);
@@ -32,7 +36,11 @@ public class HotelControll {
         
         return tableHotel;
     }
-    
+    public List<Hotel> detailHotel(int id){
+        List<Hotel> dataHotel = pDao.detailHotel(id);
+        
+        return dataHotel;
+    }
     public void updateDataHotel(Hotel p){
         pDao.updateHotel(p);
     }

@@ -11,11 +11,40 @@ import model.SubFasilitas;
 public class SubFasilitasDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
-    
+    public List<SubFasilitas> showSubFasilitasByHotel(int idhotel){
+        con = dbCon.makeConnection();
+        
+        String sql = "SELECT * FROM fasilitashotel where id_hotel = '"+idhotel+"'";
+        System.out.println("Mengambil data SubFasilitas...");
+        
+        List<SubFasilitas> list = new ArrayList<>();
+        
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            
+            if(rs!=null){
+                while(rs.next()){
+                    SubFasilitas p = new SubFasilitas(rs.getInt("id"), rs.getInt("id_tema"), rs.getInt("id_hotel") ,rs.getString("namaFasilitas"));
+                    list.add(p);
+                }
+                
+            }
+            rs.close();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error reading database...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+        
+        return list;
+    }
     public void insertSubFasilitas(SubFasilitas p){
         con = dbCon.makeConnection();
         
-        String sql = "INSERT INTO fasilitashotel(id_tema, namaFasilitas) "+ "VALUES ('"+p.getIdTema()+"', '" +p.getNama()+"')";
+        String sql = "INSERT INTO fasilitashotel(id_tema, id_hotel, namaFasilitas) "+ "VALUES ('"+p.getIdTema()+"', '" +p.getIdHotel()+"', '"+p.getNama()+"')";
         System.out.println("Adding SubFasilitas...");
         System.out.println(sql);
         
@@ -45,7 +74,7 @@ public class SubFasilitasDAO {
             
             if(rs!=null){
                 while(rs.next()){
-                    SubFasilitas p = new SubFasilitas(rs.getInt("id"), rs.getInt("id_tema"), rs.getString("namaFasilitas"));
+                    SubFasilitas p = new SubFasilitas(rs.getInt("id"), rs.getInt("id_tema"), rs.getInt("id_hotel") ,rs.getString("namaFasilitas"));
                     list.add(p);
                 }
                 

@@ -1134,9 +1134,7 @@ public class AdminHome extends javax.swing.JFrame {
     }//GEN-LAST:event_removeJenisHotelBtnActionPerformed
 
     private void coursePanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coursePanel2MouseClicked
-        this.dispose();
-        FasilitasHotel f = new FasilitasHotel();
-        f.setVisible(true);
+        
     }//GEN-LAST:event_coursePanel2MouseClicked
 
     /**

@@ -15,16 +15,18 @@ public class TableHotel extends AbstractTableModel{
         return list.size();
     }
     public int getColumnCount(){
-        return 3;
+        return 4;
     }
     
     public Object getValueAt(int rowIndex, int columnIndex){
         switch(columnIndex){
             case 0:
-                return list.get(rowIndex).getId();
+                return list.get(rowIndex).getId_hotel_admin();
             case 1:
-                return list.get(rowIndex).getNamaHotel();
+                return list.get(rowIndex).getId();
             case 2:
+                return list.get(rowIndex).getNamaHotel();
+            case 3:
                 return list.get(rowIndex).getStatus();
             default:
                 return null;
@@ -35,10 +37,12 @@ public class TableHotel extends AbstractTableModel{
     public String getColumnName(int column){
         switch(column){
             case 0:
-                return "ID";
+                return "ID Hotel Admin";
             case 1:
-                return "Nama Hotel";
+                return "ID";
             case 2:
+                return "Nama Hotel";
+            case 3:
                 return "Status";                
             default:
                 return null;
