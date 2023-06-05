@@ -26,6 +26,10 @@ public class GradeControll {
         return tableGrade;
     }
     
+    public String getGrade(int idGrade){
+        return pDao.getGrade(idGrade);
+    }
+    
     public void updateDataGrade(Grade p){
         pDao.updateGrade(p);
     }

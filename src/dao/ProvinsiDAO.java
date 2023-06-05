@@ -12,6 +12,37 @@ public class ProvinsiDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
     
+     public String getLokasi(int idLokasi){
+        con = dbCon.makeConnection();
+        
+        String sql = "SELECT nama FROM provinsi where id = '"+idLokasi+"'";
+        System.out.println(sql);
+        Provinsi g = new Provinsi();
+        
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            
+            if(rs!=null){
+                while(rs.next()){
+                    g = new Provinsi(rs.getString("nama"));        
+                }
+            }
+            
+                    
+
+            rs.close();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error reading database...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+        
+        return g.getNama();
+    }
+    
     public void insertProvinsi(Provinsi p){
         con = dbCon.makeConnection();
         

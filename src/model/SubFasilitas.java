@@ -6,6 +6,16 @@ public class SubFasilitas {
     private String nama;
     private int id_hotel;
 
+    public SubFasilitas(int idTema,  String nama){
+        this.idTema = idTema;
+        this.nama = nama;
+    }
+    
+    public SubFasilitas(int idTema, int idHotel, String nama){
+        this.idTema = idTema;
+        this.idTema = idTema;
+        this.nama = nama;
+    }
     public SubFasilitas(int id, int idTema,int id_hotel, String nama) {
         this.id = id;
         this.id_hotel = id_hotel;

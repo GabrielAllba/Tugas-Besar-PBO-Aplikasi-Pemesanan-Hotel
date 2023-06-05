@@ -5,6 +5,12 @@ public class Grade {
     private String nama;
     private String keterangan;
 
+    public Grade(){
+        
+    }
+    public Grade(String nama){
+        this.nama = nama;
+    }
     public Grade(int id, String nama, String keterangan) {
         this.id = id;
         this.nama = nama;

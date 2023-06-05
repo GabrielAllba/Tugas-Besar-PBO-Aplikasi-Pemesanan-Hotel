@@ -25,6 +25,9 @@ public class ProvinsiControll {
         
         return tableProvinsi;
     }
+     public String getLokasi(int idLokasi){
+        return pDao.getLokasi(idLokasi);
+    }
     
     public void updateDataProvinsi(Provinsi p){
         pDao.updateProvinsi(p);

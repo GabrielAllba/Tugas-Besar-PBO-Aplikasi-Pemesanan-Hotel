@@ -4,6 +4,7 @@ import dao.SubFasilitasDAO;
 import java.util.List;
 import model.SubFasilitas;
 import table.TableSubFasilitas;
+import table.TableTemaAndFasilitas;
 
 /*
 
@@ -17,6 +18,13 @@ public class SubFasilitasControl {
     
     public void insertDataSubFasilitas(SubFasilitas p){
         pDao.insertSubFasilitas(p);
+    }
+    
+    public TableTemaAndFasilitas showTemaAndFasilitas(int idHotel){
+        List<SubFasilitas> dataSubFasilitas = pDao.showSubFasilitasByHotel(idHotel);
+        TableTemaAndFasilitas tableTemaAndFasilitas = new TableTemaAndFasilitas(dataSubFasilitas);
+        
+        return tableTemaAndFasilitas;
     }
     
     public TableSubFasilitas showSubFasilitas(String query){

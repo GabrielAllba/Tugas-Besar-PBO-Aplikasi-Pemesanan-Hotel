@@ -11,7 +11,36 @@ import model.Grade;
 public class GradeDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
-    
+    public String getGrade(int idGrade){
+        con = dbCon.makeConnection();
+        
+        String sql = "SELECT nama FROM grade where id = '"+idGrade+"'";
+        System.out.println(sql);
+        Grade g = new Grade();
+        
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            
+            if(rs!=null){
+                while(rs.next()){
+                    g = new Grade(rs.getString("nama"));        
+                }
+            }
+            
+                    
+
+            rs.close();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error reading database...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+        
+        return g.getNama();
+    }
     public void insertGrade(Grade p){
         con = dbCon.makeConnection();
         

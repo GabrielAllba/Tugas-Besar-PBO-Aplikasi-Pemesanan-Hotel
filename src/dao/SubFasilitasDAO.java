@@ -74,7 +74,7 @@ public class SubFasilitasDAO {
             
             if(rs!=null){
                 while(rs.next()){
-                    SubFasilitas p = new SubFasilitas(rs.getInt("id"), rs.getInt("id_tema"), rs.getInt("id_hotel") ,rs.getString("namaFasilitas"));
+                    SubFasilitas p = new SubFasilitas(rs.getInt("id_tema"), rs.getString("namaFasilitas"));
                     list.add(p);
                 }
                 

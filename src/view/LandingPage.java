@@ -6,6 +6,8 @@ package view;
 
 import view.admin.LoginAdmin;
 import view.adminHotel.LoginAdminHotel;
+import view.user.LoginUser;
+import view.user.RegisterUser;
 
 /**
  *
@@ -141,6 +143,8 @@ public class LandingPage extends javax.swing.JFrame {
 
     private void userButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userButtonActionPerformed
         this.dispose();
+        LoginUser r = new LoginUser();
+        r.setVisible(true);
     }//GEN-LAST:event_userButtonActionPerformed
 
     private void hotelOwnerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hotelOwnerButtonActionPerformed
