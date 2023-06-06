@@ -56,7 +56,7 @@ public class AdminHotelHome extends javax.swing.JFrame {
     String actionSubFasilitas = null;
     int selectedSubFasilitas = 0;
     
-    int selectedIdHotel=0;
+    int selectedIdHotel=-1;
   
     int selectedIdSubFasilitas = 0;
     
@@ -167,6 +167,7 @@ public class AdminHotelHome extends javax.swing.JFrame {
        setLokasiToDropdown();
        setJenisToDropdown();
        setGradeToDropdown();
+       
        timePickerCheckin.addActionListener(new ActionListener(){
            @Override
            public void actionPerformed(ActionEvent ae){
@@ -177,7 +178,7 @@ public class AdminHotelHome extends javax.swing.JFrame {
        timePickerCheckout.addActionListener(new ActionListener(){
            @Override
            public void actionPerformed(ActionEvent ae){
-               showCheckoutTime.setText(timePickerCheckin.getSelectedTime());
+               showCheckoutTime.setText(timePickerCheckout.getSelectedTime());
            }
        });
        setSaveCancelFasilitas(false);
@@ -262,9 +263,7 @@ public class AdminHotelHome extends javax.swing.JFrame {
         logo = new javax.swing.JLabel();
         lecturerPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        coursePanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        coursePanel = new javax.swing.JPanel();
+        RoomPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         containerPanel = new javax.swing.JPanel();
@@ -353,47 +352,29 @@ public class AdminHotelHome extends javax.swing.JFrame {
                 .addGap(50, 50, 50))
         );
 
-        coursePanel1.setBackground(new java.awt.Color(153, 153, 153));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Hotel");
-
-        javax.swing.GroupLayout coursePanel1Layout = new javax.swing.GroupLayout(coursePanel1);
-        coursePanel1.setLayout(coursePanel1Layout);
-        coursePanel1Layout.setHorizontalGroup(
-            coursePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, coursePanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        coursePanel1Layout.setVerticalGroup(
-            coursePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(coursePanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jLabel4)
-                .addContainerGap(45, Short.MAX_VALUE))
-        );
-
-        coursePanel.setBackground(new java.awt.Color(153, 153, 153));
+        RoomPanel.setBackground(new java.awt.Color(153, 153, 153));
+        RoomPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RoomPanelMouseClicked(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("User");
+        jLabel3.setText("Room");
 
-        javax.swing.GroupLayout coursePanelLayout = new javax.swing.GroupLayout(coursePanel);
-        coursePanel.setLayout(coursePanelLayout);
-        coursePanelLayout.setHorizontalGroup(
-            coursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(coursePanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout RoomPanelLayout = new javax.swing.GroupLayout(RoomPanel);
+        RoomPanel.setLayout(RoomPanelLayout);
+        RoomPanelLayout.setHorizontalGroup(
+            RoomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RoomPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        coursePanelLayout.setVerticalGroup(
-            coursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(coursePanelLayout.createSequentialGroup()
+        RoomPanelLayout.setVerticalGroup(
+            RoomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RoomPanelLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel3)
                 .addContainerGap(30, Short.MAX_VALUE))
@@ -406,8 +387,7 @@ public class AdminHotelHome extends javax.swing.JFrame {
             .addGroup(sidebarPanelLayout.createSequentialGroup()
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 12, Short.MAX_VALUE))
-            .addComponent(coursePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(coursePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(RoomPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lecturerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         sidebarPanelLayout.setVerticalGroup(
@@ -418,9 +398,7 @@ public class AdminHotelHome extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lecturerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(coursePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(coursePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RoomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -913,14 +891,13 @@ public class AdminHotelHome extends javax.swing.JFrame {
             .addGroup(contentPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(contentPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mataKuliahLabel6)
-                    .addComponent(filterHotelDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(contentPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(contentPanel4Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(listHotelPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGap(4, 4, 4)))
+                    .addGroup(contentPanel4Layout.createSequentialGroup()
+                        .addGroup(contentPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(mataKuliahLabel6)
+                            .addComponent(filterHotelDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(listHotelPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
         contentPanel4Layout.setVerticalGroup(
             contentPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -931,12 +908,9 @@ public class AdminHotelHome extends javax.swing.JFrame {
                 .addComponent(mataKuliahLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(filterHotelDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(425, Short.MAX_VALUE))
-            .addGroup(contentPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contentPanel4Layout.createSequentialGroup()
-                    .addContainerGap(163, Short.MAX_VALUE)
-                    .addComponent(listHotelPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addComponent(listHotelPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jLayeredPane1.setLayer(headerPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -1055,7 +1029,7 @@ public class AdminHotelHome extends javax.swing.JFrame {
             String checkinTime = showCheckinTime.getText();
             String checkoutTime = showCheckoutTime.getText();
             
-            String fasilitas = "";
+            
             String status = "unverified";
             BigInteger pemasukan = BigInteger.valueOf(0);
             
@@ -1065,12 +1039,12 @@ public class AdminHotelHome extends javax.swing.JFrame {
             if(action.equals("tambah")){
                 System.out.println("asldfjk");
                 Hotel h = new Hotel(0, Integer.parseInt(idValueInput.getText()), idJenisHotel, idProvinsiHotel, idGradeHotel, namaHotel,
-                alamatLengkap, deskripsiHotel, fasilitas, checkinTime, checkoutTime, status, pemasukan);
+                alamatLengkap, deskripsiHotel, checkinTime, checkoutTime, status, pemasukan);
                 hotelControl.insertDataHotel(h);
                 System.out.println("asldfjk");
             }else{
                 Hotel h = new Hotel(selectedIdHotel, Integer.parseInt(idValueInput.getText()), idJenisHotel, idProvinsiHotel, idGradeHotel, namaHotel,
-                alamatLengkap, deskripsiHotel, fasilitas, checkinTime, checkoutTime, status, pemasukan);
+                alamatLengkap, deskripsiHotel, checkinTime, checkoutTime, status, pemasukan);
                 hotelControl.updateDataHotel(h);
             }
             
@@ -1386,6 +1360,30 @@ public class AdminHotelHome extends javax.swing.JFrame {
         
     }//GEN-LAST:event_cancelFasilitasBtnActionPerformed
 
+    private void RoomPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RoomPanelMouseClicked
+    
+        int clickedHotel = tableHotel.getSelectedRow();
+        TableModel tableModel = tableHotel.getModel();
+        String namaHotel;
+        if(selectedIdHotel == -1){
+            JOptionPane.showMessageDialog(this, "Pilih dulu hotel yang kamu punya!");
+        }else{
+            selectedIdHotel = Integer.parseInt(tableModel.getValueAt(clickedHotel, 1).toString());
+            namaHotel = tableModel.getValueAt(clickedHotel, 2).toString();
+            if(hotelControl.checkIdHotelAdmin(selectedIdHotel) != Integer.valueOf(idValueInput.getText())){
+                 JOptionPane.showMessageDialog(this, "Pilih dulu hotel yang punya kamu!");
+            }else{
+                AdminHotelTipeRoom r = new AdminHotelTipeRoom();
+                r.setVisible(true);
+                r.idHotelValueTipeRoom.setText(""+selectedIdHotel);
+                r.namaHotelValueTipeRoom.setText(namaHotel);
+                
+            }
+        }
+        
+        
+    }//GEN-LAST:event_RoomPanelMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1430,6 +1428,7 @@ public class AdminHotelHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel RoomPanel;
     private javax.swing.JButton addPendaftaran;
     private javax.swing.JButton addSubFasillitas;
     private javax.swing.JTextField alamatLengkapInput;
@@ -1438,8 +1437,6 @@ public class AdminHotelHome extends javax.swing.JFrame {
     private javax.swing.JPanel containerPanel;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JPanel contentPanel4;
-    private javax.swing.JPanel coursePanel;
-    private javax.swing.JPanel coursePanel1;
     private javax.swing.JButton deletePendaftaran;
     private javax.swing.JButton deleteSubFasilitas;
     private javax.swing.JTextField deskripsiHotelInput;
@@ -1453,7 +1450,6 @@ public class AdminHotelHome extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane2;

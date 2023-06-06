@@ -15,6 +15,11 @@ Nama : Gabriel Allba Shemi Yuma
 public class TemaFasilitasControll {
     private TemaFasilitasDAO pDao = new TemaFasilitasDAO();
     
+    
+    public String getNamaTema(int idTema){
+        return pDao.getNamaTema(idTema);
+    }
+    
     public void insertDataTemaFasilitas(TemaFasilitas p){
         pDao.insertTemaFasilitas(p);
     }

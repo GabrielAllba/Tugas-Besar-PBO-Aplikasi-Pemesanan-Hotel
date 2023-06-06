@@ -71,6 +71,8 @@ public class UserHome extends javax.swing.JFrame {
         jLayeredPane1 = new javax.swing.JLayeredPane();
         headerPanel = new javax.swing.JPanel();
         titleContent = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        idUserHomeValue = new javax.swing.JLabel();
         contentPanel2 = new javax.swing.JPanel();
         namaHotelInput = new javax.swing.JTextField();
         mataKuliahLabel5 = new javax.swing.JLabel();
@@ -162,7 +164,7 @@ public class UserHome extends javax.swing.JFrame {
             coursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(coursePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
         );
         coursePanelLayout.setVerticalGroup(
@@ -211,18 +213,37 @@ public class UserHome extends javax.swing.JFrame {
         titleContent.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleContent.setText("Homepage User");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel5.setText("ID User : ");
+
+        idUserHomeValue.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        idUserHomeValue.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+
         javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
         headerPanel.setLayout(headerPanelLayout);
         headerPanelLayout.setHorizontalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(titleContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(headerPanelLayout.createSequentialGroup()
+                .addComponent(titleContent, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 137, Short.MAX_VALUE))
+            .addGroup(headerPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(idUserHomeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         headerPanelLayout.setVerticalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+                .addContainerGap(59, Short.MAX_VALUE)
                 .addComponent(titleContent)
-                .addGap(42, 42, 42))
+                .addGap(18, 18, 18)
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(idUserHomeValue))
+                .addGap(7, 7, 7))
         );
 
         contentPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -298,40 +319,30 @@ public class UserHome extends javax.swing.JFrame {
             contentPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contentPanel2Layout.createSequentialGroup()
                 .addGroup(contentPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contentPanel2Layout.createSequentialGroup()
-                        .addGroup(contentPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(mataKuliahLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(contentPanel2Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(contentPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(mataKuliahLabel5)
-                                    .addComponent(mataKuliahLabel7)
-                                    .addComponent(mataKuliahLabel8)
-                                    .addComponent(mataKuliahLabel11)
-                                    .addComponent(jScrollPane1)
-                                    .addComponent(namaHotelInput, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
-                                    .addComponent(gradeInput)
-                                    .addComponent(lokasiInput))))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(mataKuliahLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(contentPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(contentPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(contentPanel2Layout.createSequentialGroup()
-                                .addComponent(checkinInput, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(checkoutTime, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(contentPanel2Layout.createSequentialGroup()
-                                .addGroup(contentPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(mataKuliahLabel13)
-                                    .addGroup(contentPanel2Layout.createSequentialGroup()
-                                        .addComponent(mataKuliahLabel14)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(mataKuliahLabel15)))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap())
-            .addGroup(contentPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(contentPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(mataKuliahLabel5)
+                                .addComponent(mataKuliahLabel7)
+                                .addComponent(mataKuliahLabel8)
+                                .addComponent(mataKuliahLabel11)
+                                .addComponent(jScrollPane1)
+                                .addComponent(namaHotelInput, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                                .addComponent(gradeInput)
+                                .addComponent(lokasiInput))
+                            .addComponent(mataKuliahLabel13)
+                            .addGroup(contentPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, contentPanel2Layout.createSequentialGroup()
+                                    .addComponent(checkinInput, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(checkoutTime, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, contentPanel2Layout.createSequentialGroup()
+                                    .addComponent(mataKuliahLabel14)
+                                    .addGap(26, 26, 26)
+                                    .addComponent(mataKuliahLabel15)))
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         contentPanel2Layout.setVerticalGroup(
@@ -447,14 +458,13 @@ public class UserHome extends javax.swing.JFrame {
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(headerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addComponent(contentPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(contentPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 147, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(contentPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(157, Short.MAX_VALUE))
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -492,7 +502,7 @@ public class UserHome extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(sidebarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 972, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 861, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -543,7 +553,17 @@ public class UserHome extends javax.swing.JFrame {
     }//GEN-LAST:event_tableHotelMouseClicked
 
     private void pesanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesanButtonActionPerformed
-
+        UserPembayaran u = new UserPembayaran();
+        u.setVisible(true);
+        u.idHotelValuePembayaran.setText(""+selectedIdHotel);
+        u.namaHotelPembayaran.setText(hotelControl.detailHotel(selectedIdHotel).get(0).getNamaHotel());
+        u.lokasiInput.setText(""+lokasiControl.getLokasi(hotelControl.detailHotel(selectedIdHotel).get(0).getId_provinsi()));
+        u.deskripsiInput.setText(hotelControl.detailHotel(selectedIdHotel).get(0).getDeskripsi());
+        u.gradeInput.setText(gradeControl.getGrade(hotelControl.detailHotel(selectedIdHotel).get(0).getId_grade()));
+        u.checkinInput.setText(hotelControl.detailHotel(selectedIdHotel).get(0).getCheckinTime());
+        u.checkoutTime.setText(hotelControl.detailHotel(selectedIdHotel).get(0).getCheckoutTime());
+        u.tableTemaAndFasilitas.setModel(subFasilitasControl.showTemaAndFasilitas(selectedIdHotel));
+        u.idUserValuePembayaran.setText(idUserHomeValue.getText());
     }//GEN-LAST:event_pesanButtonActionPerformed
 
     private void tableTemaAndFasilitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableTemaAndFasilitasMouseClicked
@@ -599,9 +619,11 @@ public class UserHome extends javax.swing.JFrame {
     private javax.swing.JLabel deskripsiInput;
     private javax.swing.JTextField gradeInput;
     private javax.swing.JPanel headerPanel;
+    public javax.swing.JLabel idUserHomeValue;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

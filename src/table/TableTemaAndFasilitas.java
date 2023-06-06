@@ -3,9 +3,12 @@ package table;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import model.SubFasilitas;
+import controller.TemaFasilitasControll;
 
 public class TableTemaAndFasilitas extends AbstractTableModel{
     private List<SubFasilitas> list;
+    
+    TemaFasilitasControll t = new TemaFasilitasControll();
     
     public TableTemaAndFasilitas(List<SubFasilitas> list){
         this.list = list;
@@ -21,7 +24,7 @@ public class TableTemaAndFasilitas extends AbstractTableModel{
     public Object getValueAt(int rowIndex, int columnIndex){
         switch(columnIndex){
             case 0:
-                return list.get(rowIndex).getIdTema();
+                return t.getNamaTema(list.get(rowIndex).getIdTema());
             case 1:
                 return list.get(rowIndex).getNama();
             default:

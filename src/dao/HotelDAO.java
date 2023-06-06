@@ -13,6 +13,38 @@ public class HotelDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
     
+    public String getNamaHotel(int idHotel){
+        con = dbCon.makeConnection();
+        
+        String sql = "SELECT namaHotel from hotel where id = '"+idHotel+"'";
+        
+        System.out.println(sql);
+        
+        Hotel list = new Hotel(0);
+        
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            
+            if(rs!=null){
+                while(rs.next()){
+                    list = new Hotel(rs.getString("namaHotel"));
+                    
+                }
+                
+            }
+            rs.close();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error reading database...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+        
+        return list.getNamaHotel();
+    }
+    
     public int checkIdHotelAdmin(int idHotel){
         con = dbCon.makeConnection();
         
@@ -49,9 +81,9 @@ public class HotelDAO {
     public void insertHotel(Hotel p){
         con = dbCon.makeConnection();
         
-        String sql = "INSERT INTO hotel(id_hotel_admin, id_jenis, id_provinsi, id_grade, namaHotel, detailLokasi, deskripsi, fasilitas, checkinTime, checkoutTime, status, pemasukan) "+ 
+        String sql = "INSERT INTO hotel(id_hotel_admin, id_jenis, id_provinsi, id_grade, namaHotel, detailLokasi, deskripsi, checkinTime, checkoutTime, status, pemasukan) "+ 
                 "VALUES ('" + p.getId_hotel_admin()+"', '"+p.getId_jenis()+"', '"+p.getId_provinsi()+"', '"+p.getId_grade()+"', "
-                + "'"+p.getNamaHotel()+"', '"+p.getDetailLokasi()+"', '"+p.getDeskripsi()+"', '"+p.getFasilitas()+"', "
+                + "'"+p.getNamaHotel()+"', '"+p.getDetailLokasi()+"', '"+p.getDeskripsi()+"', "
                 + "'"+p.getCheckinTime()+"', '"+p.getCheckoutTime()+"', '"+p.getStatus()+"', '"+p.getPemasukan()+"')";
         System.out.println("Adding Hotel...");
         System.out.println(sql);
@@ -83,7 +115,7 @@ public class HotelDAO {
             if(rs!=null){
                 while(rs.next()){
                     Hotel p = new Hotel(rs.getInt("id"), rs.getInt("id_hotel_admin"), rs.getInt("id_jenis"), rs.getInt("id_provinsi"), rs.getInt("id_grade"), 
-                            rs.getString("namaHotel"), rs.getString("detailLokasi"), rs.getString("deskripsi"), rs.getString("fasilitas"), rs.getString("checkinTime"), rs.getString("checkoutTime"),
+                            rs.getString("namaHotel"), rs.getString("detailLokasi"), rs.getString("deskripsi"), rs.getString("checkinTime"), rs.getString("checkoutTime"),
                     rs.getString("status"), BigInteger.valueOf(rs.getLong("pemasukan")));
                     list.add(p);
                 }
@@ -115,7 +147,7 @@ public class HotelDAO {
             if(rs!=null){
                 while(rs.next()){
                     Hotel p = new Hotel(rs.getInt("id"), rs.getInt("id_hotel_admin"), rs.getInt("id_jenis"), rs.getInt("id_provinsi"), rs.getInt("id_grade"), 
-                            rs.getString("namaHotel"), rs.getString("detailLokasi"), rs.getString("deskripsi"), rs.getString("fasilitas"), rs.getString("checkinTime"), rs.getString("checkoutTime"),
+                            rs.getString("namaHotel"), rs.getString("detailLokasi"), rs.getString("deskripsi"), rs.getString("checkinTime"), rs.getString("checkoutTime"),
                     rs.getString("status"), BigInteger.valueOf(rs.getLong("pemasukan")));
                     list.add(p);
                 }
@@ -148,7 +180,7 @@ public class HotelDAO {
             if(rs!=null){
                 while(rs.next()){
                     Hotel p = new Hotel(rs.getInt("id"), rs.getInt("id_hotel_admin"), rs.getInt("id_jenis"), rs.getInt("id_provinsi"), rs.getInt("id_grade"), 
-                            rs.getString("namaHotel"), rs.getString("detailLokasi"), rs.getString("deskripsi"), rs.getString("fasilitas"), rs.getString("checkinTime"), rs.getString("checkoutTime"),
+                            rs.getString("namaHotel"), rs.getString("detailLokasi"), rs.getString("deskripsi"),rs.getString("checkinTime"), rs.getString("checkoutTime"),
                     rs.getString("status"), BigInteger.valueOf(rs.getLong("pemasukan")));
                     list.add(p);
                 }
@@ -171,7 +203,7 @@ public class HotelDAO {
         
         String sql = "UPDATE hotel SET id_hotel_admin = '"+p.getId_hotel_admin()+"', id_jenis = '"+p.getId_jenis()+"', "
                 + "id_provinsi = '"+p.getId_provinsi()+"', id_grade = '"+p.getId_grade()+"', namaHotel = '"+p.getNamaHotel()+"', detailLokasi = '"+p.getDetailLokasi()+"',"
-                + "deskripsi = '"+p.getDeskripsi()+"', fasilitas = '"+p.getFasilitas()+"', checkinTime = '"+p.getCheckinTime()+"', checkoutTime = '"+p.getCheckoutTime()+"',"
+                + "deskripsi = '"+p.getDeskripsi()+"', checkinTime = '"+p.getCheckinTime()+"', checkoutTime = '"+p.getCheckoutTime()+"',"
                 + "status = '"+p.getStatus()+"', pemasukan = '"+p.getPemasukan()+"' where id = '"+p.getId()+"'";
         
         System.out.println(sql);

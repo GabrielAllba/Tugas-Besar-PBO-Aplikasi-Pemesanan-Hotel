@@ -11,17 +11,19 @@ public class Hotel {
     private String namaHotel;
     private String detailLokasi;
     private String deskripsi;
-    private String fasilitas;
     private String checkinTime;
     private String checkoutTime;
     private String status;
     private BigInteger pemasukan;
 
+    public Hotel(String namaHotel){
+        this.namaHotel = namaHotel;
+    }
     public Hotel(int id_hotel_admin){
         this.id_hotel_admin = id_hotel_admin;
     }
     
-    public Hotel(int id, int id_hotel_admin, int id_jenis, int id_provinsi, int id_grade, String namaHotel, String detailLokasi, String deskripsi, String fasilitas, String checkinTime, String checkoutTime, String status, BigInteger pemasukan) {
+    public Hotel(int id, int id_hotel_admin, int id_jenis, int id_provinsi, int id_grade, String namaHotel, String detailLokasi, String deskripsi, String checkinTime, String checkoutTime, String status, BigInteger pemasukan) {
         this.id = id;
         this.id_hotel_admin = id_hotel_admin;
         this.id_jenis = id_jenis;
@@ -30,7 +32,6 @@ public class Hotel {
         this.namaHotel = namaHotel;
         this.detailLokasi = detailLokasi;
         this.deskripsi = deskripsi;
-        this.fasilitas = fasilitas;
         this.checkinTime = checkinTime;
         this.checkoutTime = checkoutTime;
         this.status = status;
@@ -69,9 +70,7 @@ public class Hotel {
         return deskripsi;
     }
 
-    public String getFasilitas() {
-        return fasilitas;
-    }
+   
 
     public String getCheckinTime() {
         return checkinTime;
@@ -121,10 +120,7 @@ public class Hotel {
         this.deskripsi = deskripsi;
     }
 
-    public void setFasilitas(String fasilitas) {
-        this.fasilitas = fasilitas;
-    }
-
+ 
     public void setCheckinTime(String checkinTime) {
         this.checkinTime = checkinTime;
     }

@@ -186,6 +186,7 @@ public class LoginUser extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Login berhasil");
                 this.dispose();
                 UserHome a = new UserHome();
+                a.idUserHomeValue.setText(""+p.getId());
                 a.setVisible(true);
                 
             }else{

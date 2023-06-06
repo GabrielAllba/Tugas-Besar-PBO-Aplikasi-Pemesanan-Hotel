@@ -12,6 +12,37 @@ public class TemaFasilitasDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
     
+    public String getNamaTema(int idTema){
+        con = dbCon.makeConnection();
+        
+        String sql = "SELECT * FROM temafasilitas where id = '"+idTema+"' ";
+        System.out.println("Mengambil data TemaFasilitas...");
+        
+        List<TemaFasilitas> list = new ArrayList<>();
+        
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            
+            if(rs!=null){
+                while(rs.next()){
+                    TemaFasilitas p = new TemaFasilitas(rs.getInt("id"), rs.getString("namaTema"));
+                    list.add(p);
+                }
+                
+            }
+            rs.close();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error reading database...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+        
+        return list.get(0).getNamaTema();
+    }
+    
     public void insertTemaFasilitas(TemaFasilitas p){
         con = dbCon.makeConnection();
         
