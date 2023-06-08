@@ -1,5 +1,7 @@
 package model;
 
+import java.math.BigInteger;
+
 public class Pemesanan {
     private int id;
     private int id_user;
@@ -10,11 +12,15 @@ public class Pemesanan {
     private String namaLengkap;
     private String noHandphone;
     private String email;
+    private BigInteger pembayaran;
 
     public Pemesanan(){
         
     }
-    public Pemesanan(int id, int id_user, int id_hotel, int id_tipe_room, String tanggalCheckin, String tanggalCheckout, String namaLengkap, String noHandphone, String email) {
+    public Pemesanan(BigInteger p){
+        this.pembayaran = p;
+    }
+    public Pemesanan(int id, int id_user, int id_hotel, int id_tipe_room, String tanggalCheckin, String tanggalCheckout, String namaLengkap, String noHandphone, String email, BigInteger pembayaran) {
         this.id = id;
         this.id_user = id_user;
         this.id_hotel = id_hotel;
@@ -24,8 +30,15 @@ public class Pemesanan {
         this.namaLengkap = namaLengkap;
         this.noHandphone = noHandphone;
         this.email = email;
+        this.pembayaran = pembayaran;
     }
 
+    public BigInteger getPembayaran(){
+        return pembayaran;
+    }
+    public void setPembayaran(BigInteger v){
+        this.pembayaran = v;
+    }
     public int getId() {
         return id;
     }

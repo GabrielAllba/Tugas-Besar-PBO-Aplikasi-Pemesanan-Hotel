@@ -13,6 +13,9 @@ public class User {
     private String tempatTinggal;
     private BigInteger saldo;
 
+    public User(BigInteger saldo){
+        this.saldo = saldo;
+    }
     public User(int id, String username, String email, String password, String namaLengkap, String jenisKelamin, String tanggalLahir, String tempatTinggal, BigInteger saldo) {
         this.id = id;
         this.username = username;

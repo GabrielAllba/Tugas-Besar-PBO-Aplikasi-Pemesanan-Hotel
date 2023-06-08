@@ -56,7 +56,7 @@
                   <Component id="logo" min="-2" pref="125" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
               </Group>
-              <Component id="coursePanel1" max="32767" attributes="0"/>
+              <Component id="pemesananUserPanel" max="32767" attributes="0"/>
               <Component id="coursePanel" alignment="0" max="32767" attributes="0"/>
               <Component id="lecturerPanel" max="32767" attributes="0"/>
           </Group>
@@ -71,7 +71,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="coursePanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="coursePanel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="pemesananUserPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -124,12 +124,15 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="coursePanel1">
+        <Container class="javax.swing.JPanel" name="pemesananUserPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pemesananUserPanelMouseClicked"/>
+          </Events>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -169,6 +172,9 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="coursePanelMouseClicked"/>
+          </Events>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -432,7 +438,7 @@
                               <Component id="mataKuliahLabel13" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jScrollPane6" min="-2" pref="102" max="-2" attributes="0"/>
-                              <EmptySpace pref="7" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="mataKuliahLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="mataKuliahLabel15" alignment="3" min="-2" max="-2" attributes="0"/>

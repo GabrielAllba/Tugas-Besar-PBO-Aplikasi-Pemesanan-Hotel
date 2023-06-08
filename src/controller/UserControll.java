@@ -1,6 +1,7 @@
 package controller;
 
 import dao.UserDAO;
+import java.math.BigInteger;
 import java.util.List;
 import model.User;
 import table.TableUser;
@@ -14,7 +15,15 @@ Nama : Gabriel Allba Shemi Yuma
 
 public class UserControll {
     private UserDAO pDao = new UserDAO();
-    
+    public void updateSaldo(int id, BigInteger saldoAwal, BigInteger pengurangan, String tambahKurang){
+        pDao.updateSaldo(id, saldoAwal,pengurangan, tambahKurang);
+    }
+    public String getNamaUser(int id){
+        return pDao.getNamaUser(id);
+    }
+    public BigInteger getSaldo(int id){
+        return pDao.getSaldo(id);
+    }
     public void insertDataUser(User p){
         pDao.insertUser(p);
     }

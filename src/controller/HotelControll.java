@@ -15,6 +15,9 @@ Nama : Gabriel Allba Shemi Yuma
 public class HotelControll {
     private HotelDAO pDao = new HotelDAO();
     
+    public void updateStatusHotel(int id, String status){
+        pDao.updateStatusHotel(id, status);
+    }
     public void insertDataHotel(Hotel p){
         pDao.insertHotel(p);
     }

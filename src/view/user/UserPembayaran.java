@@ -16,11 +16,15 @@ import model.JenisHotel;
 import java.sql.Date;
 
 import controller.PemesananControll;
+import controller.UserControll;
+import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import model.Pemesanan;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class UserPembayaran extends javax.swing.JFrame {
     
@@ -30,6 +34,8 @@ public class UserPembayaran extends javax.swing.JFrame {
     SubFasilitasControl subFasilitasControl = new SubFasilitasControl();
     TipeRoomControll tipeRoomControl = new TipeRoomControll();
     PemesananControll pemesananControl = new PemesananControll();
+    UserControll userControl = new UserControll();
+    
     int selectedIdTipeRoom = 0;
     String action=null;
     int selectedId = 0;
@@ -44,10 +50,16 @@ public class UserPembayaran extends javax.swing.JFrame {
     String cinDate = null;
     String coutDate =null;
     
+    long daysCounter = 0;
+    
+   
+    
     public UserPembayaran() {
        initComponents();
        showHotelAll();
        setDetailInputVisibility(false);
+       
+       dateChooseCheckout.setEnabled(false);
        
        dateChooseCheckin.getDateEditor().addPropertyChangeListener(e -> {
             if ("date".equals(e.getPropertyName())) {
@@ -61,22 +73,37 @@ public class UserPembayaran extends javax.swing.JFrame {
                 System.out.println("sql            : "+date);
                 cinDate = date.toString();
                 tanggalCheckinValue.setText(formattedDate);
+                dateChooseCheckout.setEnabled(true);
+                dateChooseCheckout.getJCalendar().setMinSelectableDate(date); 
+
             }
         });
        
+       
+       
        dateChooseCheckout.getDateEditor().addPropertyChangeListener(e -> {
-            if ("date".equals(e.getPropertyName())) {
-                java.util.Date selectedDate = dateChooseCheckout.getDate();
-                Date date = new Date(selectedDate.getTime());
+           
+               if ("date".equals(e.getPropertyName())) {
+                   java.util.Date selectedDate = dateChooseCheckout.getDate();
+                   Date date = new Date(selectedDate.getTime());
+                   
+                   SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
+                   String formattedDate = dateFormat.format(selectedDate);
                 
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
-                String formattedDate = dateFormat.format(selectedDate);
+                    System.out.println("formatted date : "+formattedDate);
+                    System.out.println("sql            : "+date);
+                    coutDate = date.toString();
+                    tanggalCheckoutValue.setText(formattedDate);
                 
-                System.out.println("formatted date : "+formattedDate);
-                System.out.println("sql            : "+date);
-                coutDate = date.toString();
-                tanggalCheckoutValue.setText(formattedDate);
-            }
+                    LocalDate startDate = LocalDate.parse(cinDate);
+                    LocalDate endDate = LocalDate.parse(coutDate);
+                
+                    daysCounter = ChronoUnit.DAYS.between(startDate, endDate);
+                    daysCount.setText(""+daysCounter+" malam");
+                  
+            }  
+           
+            
         });
     }
     
@@ -143,6 +170,9 @@ public class UserPembayaran extends javax.swing.JFrame {
         pesanButton = new javax.swing.JButton();
         mataKuliahLabel18 = new javax.swing.JLabel();
         idUserValuePembayaran = new javax.swing.JLabel();
+        mataKuliahLabel19 = new javax.swing.JLabel();
+        daysCount = new javax.swing.JLabel();
+        totalBiaya = new javax.swing.JLabel();
         headerPanel3 = new javax.swing.JPanel();
         mataKuliahLabel4 = new javax.swing.JLabel();
         dateChooseCheckin = new com.toedter.calendar.JDateChooser();
@@ -466,28 +496,43 @@ public class UserPembayaran extends javax.swing.JFrame {
 
         idUserValuePembayaran.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
 
+        mataKuliahLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        mataKuliahLabel19.setText("Kamu menginap selama : ");
+
+        daysCount.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        totalBiaya.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
         javax.swing.GroupLayout headerPanel2Layout = new javax.swing.GroupLayout(headerPanel2);
         headerPanel2.setLayout(headerPanel2Layout);
         headerPanel2Layout.setHorizontalGroup(
             headerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(headerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pesanButton)
-                    .addGroup(headerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(mataKuliahLabel3)
-                        .addComponent(mataKuliahLabel16)
-                        .addComponent(mataKuliahLabel12)
-                        .addComponent(mataKuliahLabel10)
-                        .addComponent(noHandphoneInput, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                        .addComponent(namaLengkapInput)
-                        .addComponent(emailInput)))
+                .addGroup(headerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(mataKuliahLabel3)
+                    .addComponent(mataKuliahLabel16)
+                    .addComponent(mataKuliahLabel12)
+                    .addComponent(mataKuliahLabel10)
+                    .addComponent(noHandphoneInput, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                    .addComponent(namaLengkapInput)
+                    .addComponent(emailInput))
                 .addGap(28, 28, 28))
             .addGroup(headerPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mataKuliahLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(idUserValuePembayaran)
+                .addGroup(headerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(headerPanel2Layout.createSequentialGroup()
+                        .addComponent(mataKuliahLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(idUserValuePembayaran))
+                    .addGroup(headerPanel2Layout.createSequentialGroup()
+                        .addComponent(mataKuliahLabel19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(daysCount, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(headerPanel2Layout.createSequentialGroup()
+                        .addComponent(pesanButton)
+                        .addGap(20, 20, 20)
+                        .addComponent(totalBiaya, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         headerPanel2Layout.setVerticalGroup(
@@ -511,9 +556,15 @@ public class UserPembayaran extends javax.swing.JFrame {
                 .addComponent(mataKuliahLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(22, 22, 22)
+                .addGroup(headerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mataKuliahLabel19)
+                    .addComponent(daysCount))
+                .addGap(17, 17, 17)
                 .addComponent(pesanButton)
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(totalBiaya)
+                .addContainerGap(193, Short.MAX_VALUE))
         );
 
         headerPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -748,16 +799,68 @@ public class UserPembayaran extends javax.swing.JFrame {
     }
     private void pesanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesanButtonActionPerformed
         try{
-            checkTanggalKosong();
+            String checkinTanggal = cinDate, checkoutTanggal = coutDate;
+            int idHotel = Integer.valueOf(idHotelValuePembayaran.getText());
+            int idTipeRoom = selectedIdTipeRoom;
             
-            String namaLengkap = namaLengkapInput.getText();
-            String noHandphone = noHandphoneInput.getText();
-            String email = emailInput.getText();
+            List<Pemesanan> listPesanan = pemesananControl.showPemesananByIdHotelAndTipeRoom(idHotel, idTipeRoom);
+            System.out.println("riel riel riel");
+            for(Pemesanan n : listPesanan){
+                System.out.println(n.getTanggalCheckin() + " - "+n.getTanggalCheckout());
+            }
             
-//            public Pemesanan(int id, int id_user, int id_hotel, int id_tipe_room, String namaLengkap, String noHandphone, String email) {
-            Pemesanan p = new Pemesanan(0, Integer.valueOf(idUserValuePembayaran.getText()), Integer.valueOf(idHotelValuePembayaran.getText()), 
-                    selectedIdTipeRoom, cinDate, coutDate ,namaLengkap, noHandphone, email);
-            pemesananControl.insertDataPemesanan(p);
+            LocalDate startDate = LocalDate.parse(checkinTanggal);
+            LocalDate endDate = LocalDate.parse(checkoutTanggal);
+
+        
+            LocalDate currentDate = startDate;
+            
+            boolean canOrder = false;
+            
+            while (!currentDate.isAfter(endDate)) {
+                if(pemesananControl.countPemesananBetween(currentDate.toString(), listPesanan) == tipeRoomControl.getKapasitasById(idTipeRoom)){
+                    canOrder = false;
+                }else{
+                    if(currentDate.isEqual(endDate)){
+                        canOrder = true;
+                    }
+                }
+                currentDate = currentDate.plusDays(1);
+            }
+            System.out.println("Can order : "+canOrder);
+            
+            if(canOrder == true){
+                BigInteger saldo = BigInteger.valueOf(0);
+            
+                saldo = userControl.getSaldo(Integer.valueOf(idUserValuePembayaran.getText()));
+
+
+                checkTanggalKosong();
+
+                String namaLengkap = namaLengkapInput.getText();
+                String noHandphone = noHandphoneInput.getText();
+                String email = emailInput.getText();
+
+                TableModel tableModel = tableTipeRoomPembayaran.getModel();
+                int clicked = tableTipeRoomPembayaran.getSelectedRow();
+
+
+                BigInteger pembayaran = BigInteger.valueOf(Long.valueOf(tableModel.getValueAt(clicked, 3).toString())).multiply(BigInteger.valueOf(daysCounter));
+
+
+                if(saldo.compareTo(pembayaran) < 0){
+                    JOptionPane.showMessageDialog(this, "Saldo anda "+saldo+"! Kurang Rp. "+pembayaran.subtract(saldo));
+                }else{
+                    Pemesanan p = new Pemesanan(0, Integer.valueOf(idUserValuePembayaran.getText()), Integer.valueOf(idHotelValuePembayaran.getText()),
+                       selectedIdTipeRoom, cinDate, coutDate ,namaLengkap, noHandphone, email, pembayaran);
+                    System.out.println("-----------------------");
+                    pemesananControl.insertDataPemesanan(p);
+                    JOptionPane.showMessageDialog(this, "Total bayar = Rp."+pembayaran);
+                    userControl.updateSaldo(Integer.valueOf(idUserValuePembayaran.getText()),saldo, pembayaran, "kurang");  
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "Tidak Bisa pesan");
+            }
             
             
         }catch(InputKosongException e){
@@ -816,6 +919,7 @@ public class UserPembayaran extends javax.swing.JFrame {
     private javax.swing.JPanel coursePanel1;
     private com.toedter.calendar.JDateChooser dateChooseCheckin;
     private com.toedter.calendar.JDateChooser dateChooseCheckout;
+    private javax.swing.JLabel daysCount;
     public javax.swing.JLabel deskripsiInput;
     private javax.swing.JTextField emailInput;
     public javax.swing.JTextField gradeInput;
@@ -845,6 +949,7 @@ public class UserPembayaran extends javax.swing.JFrame {
     private javax.swing.JLabel mataKuliahLabel16;
     private javax.swing.JLabel mataKuliahLabel17;
     private javax.swing.JLabel mataKuliahLabel18;
+    private javax.swing.JLabel mataKuliahLabel19;
     private javax.swing.JLabel mataKuliahLabel2;
     private javax.swing.JLabel mataKuliahLabel3;
     private javax.swing.JLabel mataKuliahLabel4;
@@ -864,5 +969,6 @@ public class UserPembayaran extends javax.swing.JFrame {
     private javax.swing.JLabel tanggalCheckinValue;
     private javax.swing.JLabel tanggalCheckoutValue;
     private javax.swing.JLabel titleContent;
+    private javax.swing.JLabel totalBiaya;
     // End of variables declaration//GEN-END:variables
 }

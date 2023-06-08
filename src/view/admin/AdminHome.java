@@ -102,7 +102,7 @@ public class AdminHome extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         coursePanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        coursePanel = new javax.swing.JPanel();
+        userPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         containerPanel = new javax.swing.JPanel();
@@ -180,6 +180,11 @@ public class AdminHome extends javax.swing.JFrame {
         );
 
         coursePanel1.setBackground(new java.awt.Color(153, 153, 153));
+        coursePanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coursePanel1MouseClicked(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -202,24 +207,29 @@ public class AdminHome extends javax.swing.JFrame {
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
-        coursePanel.setBackground(new java.awt.Color(153, 153, 153));
+        userPanel.setBackground(new java.awt.Color(153, 153, 153));
+        userPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userPanelMouseClicked(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("User");
 
-        javax.swing.GroupLayout coursePanelLayout = new javax.swing.GroupLayout(coursePanel);
-        coursePanel.setLayout(coursePanelLayout);
-        coursePanelLayout.setHorizontalGroup(
-            coursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(coursePanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout userPanelLayout = new javax.swing.GroupLayout(userPanel);
+        userPanel.setLayout(userPanelLayout);
+        userPanelLayout.setHorizontalGroup(
+            userPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(userPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        coursePanelLayout.setVerticalGroup(
-            coursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(coursePanelLayout.createSequentialGroup()
+        userPanelLayout.setVerticalGroup(
+            userPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(userPanelLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel3)
                 .addContainerGap(40, Short.MAX_VALUE))
@@ -233,7 +243,7 @@ public class AdminHome extends javax.swing.JFrame {
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 12, Short.MAX_VALUE))
             .addComponent(coursePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(coursePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(userPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lecturerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         sidebarPanelLayout.setVerticalGroup(
@@ -244,7 +254,7 @@ public class AdminHome extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lecturerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(coursePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(coursePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1100,6 +1110,18 @@ public class AdminHome extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_removeJenisHotelBtnActionPerformed
 
+    private void coursePanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coursePanel1MouseClicked
+        this.dispose();
+        AdminHotel a = new AdminHotel();
+        a.setVisible(true);
+    }//GEN-LAST:event_coursePanel1MouseClicked
+
+    private void userPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userPanelMouseClicked
+        this.dispose();
+        AdminUser a = new AdminUser();
+        a.setVisible(true);
+    }//GEN-LAST:event_userPanelMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1147,7 +1169,6 @@ public class AdminHome extends javax.swing.JFrame {
     private javax.swing.JPanel contentPanel;
     private javax.swing.JPanel contentPanel1;
     private javax.swing.JPanel contentPanel2;
-    private javax.swing.JPanel coursePanel;
     private javax.swing.JPanel coursePanel1;
     private javax.swing.JButton deleteGradeBtn;
     private javax.swing.JButton deleteProvinsiBtn;
@@ -1188,5 +1209,6 @@ public class AdminHome extends javax.swing.JFrame {
     private javax.swing.JTable tableJenisHotel;
     private javax.swing.JTable tableProvinsi;
     private javax.swing.JLabel titleContent;
+    private javax.swing.JPanel userPanel;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,6 +15,10 @@ Nama : Gabriel Allba Shemi Yuma
 public class TipeRoomControll {
     private TipeRoomDAO pDao = new TipeRoomDAO();
     
+    public int getKapasitasById(int idTipeRoom){
+        return pDao.getKapasitasById(idTipeRoom);
+    }
+    
     public void insertDataTipeRoom(TipeRoom p){
         pDao.insertTipeRoom(p);
     }

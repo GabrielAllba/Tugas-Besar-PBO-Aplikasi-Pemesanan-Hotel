@@ -27,7 +27,7 @@
               <Component id="sidePanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" pref="763" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" pref="872" max="32767" attributes="0"/>
                   <Component id="containerPanel" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -40,7 +40,7 @@
           <Group type="102" attributes="0">
               <Component id="containerPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane2" pref="321" max="32767" attributes="0"/>
+              <Component id="jScrollPane2" min="-2" pref="399" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -121,7 +121,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jLabel2" alignment="0" pref="763" max="32767" attributes="0"/>
+              <Component id="jLabel2" alignment="0" pref="872" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -209,9 +209,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Component id="FormInputPanel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="SearchText" min="-2" pref="205" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="SearchBtn" min="-2" max="-2" attributes="0"/>
@@ -219,7 +219,7 @@
                           <Component id="PanelDataTipeRoom" min="-2" max="-2" attributes="0"/>
                           <Component id="lihatTipeRoomBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="237" max="32767" attributes="0"/>
+                      <EmptySpace pref="190" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -261,24 +261,26 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="CancelBtnTipeRoom" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="KapasitasLabel1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="hargaInput" max="32767" attributes="0"/>
-                                      <Component id="LabelTipeKamar" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tipeKamarInput" alignment="0" pref="160" max="32767" attributes="0"/>
-                                      <Component id="KapasitasLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="kapasitasInput" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="KapasitasLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="hargaInput" max="32767" attributes="0"/>
+                                              <Component id="LabelTipeKamar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tipeKamarInput" alignment="0" pref="160" max="32767" attributes="0"/>
+                                              <Component id="KapasitasLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="kapasitasInput" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="AddBtn" min="-2" pref="63" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="EditBtn" min="-2" pref="82" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="DeleteBtn" pref="119" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="AddBtn" min="-2" pref="63" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="EditBtn" pref="56" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                  <Component id="DeleteBtn" min="-2" pref="68" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>

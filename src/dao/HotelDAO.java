@@ -13,6 +13,26 @@ public class HotelDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
     
+    public void updateStatusHotel(int id, String status){
+        con = dbCon.makeConnection();
+        
+        String sql = "UPDATE hotel SET status = '"+status+"' where id = '"+id+"'";
+        
+        System.out.println(sql);
+        System.out.println("Editing Hotel...");
+        
+        try{
+            Statement statement = con.createStatement();
+            int result = statement.executeUpdate(sql);
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error editing hotel...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+    }
+    
     public String getNamaHotel(int idHotel){
         con = dbCon.makeConnection();
         

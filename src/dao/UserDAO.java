@@ -13,6 +13,93 @@ public class UserDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
     
+    public void updateSaldo(int id, BigInteger saldoAwal, BigInteger pengurangan, String tambahKurang){
+        con = dbCon.makeConnection();
+        String sql = null;
+        if(tambahKurang.equalsIgnoreCase("kurang")){
+            sql = "UPDATE user set saldo = '"+saldoAwal.subtract(pengurangan)+"' where id = '"+id+"'";            
+        }else{
+            sql = "UPDATE user set saldo = '"+saldoAwal.add(pengurangan)+"' where id = '"+id+"'";            
+        }
+        
+        System.out.println(sql);
+        System.out.println(sql);
+        System.out.println("Editing User...");
+        
+        try{
+            Statement statement = con.createStatement();
+            int result = statement.executeUpdate(sql);
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error editing user...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+    }
+    public BigInteger getSaldo(int id){
+        con = dbCon.makeConnection();
+        
+        String sql = "SELECT saldo FROM user where id = '"+id+"'";
+        System.out.println("in get saldo");
+        System.out.println(sql);
+        System.out.println("Mengambil data User...");
+        
+        List<User> list = new ArrayList<>();
+        
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            
+            if(rs!=null){
+                while(rs.next()){
+                    User p = new User(BigInteger.valueOf(rs.getLong("saldo")));
+                    list.add(p);
+                }
+                
+            }
+            rs.close();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error reading database...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+        
+        return list.get(0).getSaldo();
+    }
+    public String getNamaUser(int id){
+        con = dbCon.makeConnection();
+        
+        String sql = "SELECT * FROM user where id = '"+id+"'";
+        System.out.println("Mengambil data User...");
+        
+        List<User> list = new ArrayList<>();
+        
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            
+            if(rs!=null){
+                while(rs.next()){
+                    User p = new User(rs.getInt("id"), rs.getString("username"), rs.getString("email"), rs.getString("password"), 
+                    rs.getString("namaLengkap"), rs.getString("jenisKelamin"), rs.getString("tanggalLahir"), rs.getString("tempatTinggal"), BigInteger.valueOf(rs.getLong("saldo")));
+                    list.add(p);
+                }
+                
+            }
+            rs.close();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error reading database...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+        
+        return list.get(0).getUsername();
+    }
     public void insertUser(User p){
         con = dbCon.makeConnection();
         

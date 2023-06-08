@@ -8,6 +8,7 @@ import controller.GradeControll;
 import controller.HotelControll;
 import controller.JenisHotelControll;
 import controller.SubFasilitasControl;
+import controller.UserControll;
 import java.util.List;
 import javax.swing.table.TableModel;
 import model.Hotel;
@@ -19,6 +20,7 @@ public class UserHome extends javax.swing.JFrame {
     GradeControll gradeControl = new GradeControll();
     ProvinsiControll lokasiControl = new ProvinsiControll();
     SubFasilitasControl subFasilitasControl = new SubFasilitasControl();
+    UserControll userControl = new UserControll();
     
     String action=null;
     int selectedId = 0;
@@ -62,7 +64,7 @@ public class UserHome extends javax.swing.JFrame {
         logo = new javax.swing.JLabel();
         lecturerPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        coursePanel1 = new javax.swing.JPanel();
+        pemesananUserPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         coursePanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -129,30 +131,40 @@ public class UserHome extends javax.swing.JFrame {
                 .addGap(50, 50, 50))
         );
 
-        coursePanel1.setBackground(new java.awt.Color(153, 153, 153));
+        pemesananUserPanel.setBackground(new java.awt.Color(153, 153, 153));
+        pemesananUserPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pemesananUserPanelMouseClicked(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Pemesanan");
 
-        javax.swing.GroupLayout coursePanel1Layout = new javax.swing.GroupLayout(coursePanel1);
-        coursePanel1.setLayout(coursePanel1Layout);
-        coursePanel1Layout.setHorizontalGroup(
-            coursePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, coursePanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pemesananUserPanelLayout = new javax.swing.GroupLayout(pemesananUserPanel);
+        pemesananUserPanel.setLayout(pemesananUserPanelLayout);
+        pemesananUserPanelLayout.setHorizontalGroup(
+            pemesananUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pemesananUserPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        coursePanel1Layout.setVerticalGroup(
-            coursePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, coursePanel1Layout.createSequentialGroup()
+        pemesananUserPanelLayout.setVerticalGroup(
+            pemesananUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pemesananUserPanelLayout.createSequentialGroup()
                 .addContainerGap(45, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(41, 41, 41))
         );
 
         coursePanel.setBackground(new java.awt.Color(153, 153, 153));
+        coursePanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coursePanelMouseClicked(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -182,7 +194,7 @@ public class UserHome extends javax.swing.JFrame {
             .addGroup(sidebarPanelLayout.createSequentialGroup()
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 12, Short.MAX_VALUE))
-            .addComponent(coursePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pemesananUserPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(coursePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lecturerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -196,7 +208,7 @@ public class UserHome extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(coursePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(coursePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pemesananUserPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -370,7 +382,7 @@ public class UserHome extends javax.swing.JFrame {
                 .addComponent(mataKuliahLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(contentPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(mataKuliahLabel14)
                     .addComponent(mataKuliahLabel15))
@@ -570,6 +582,25 @@ public class UserHome extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tableTemaAndFasilitasMouseClicked
 
+    private void pemesananUserPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pemesananUserPanelMouseClicked
+        this.dispose();
+        UserPemesanan a = new UserPemesanan();
+        a.setVisible(true);
+        a.idUserInputInPemesananUser.setText(""+idUserHomeValue.getText());
+        a.usernameInput.setText(""+userControl.getNamaUser(Integer.valueOf(idUserHomeValue.getText())));
+        
+    }//GEN-LAST:event_pemesananUserPanelMouseClicked
+
+    private void coursePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coursePanelMouseClicked
+         this.dispose();
+         UserProfile u = new UserProfile();
+         u.setVisible(true);
+         u.idUserProfile.setText(idUserHomeValue.getText());
+         u.saldoInput.setText(""+userControl.getSaldo(Integer.valueOf(idUserHomeValue.getText())));
+//         idUserHomeValue;
+         
+    }//GEN-LAST:event_coursePanelMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -615,7 +646,6 @@ public class UserHome extends javax.swing.JFrame {
     private javax.swing.JPanel contentPanel2;
     private javax.swing.JPanel contentPanel3;
     private javax.swing.JPanel coursePanel;
-    private javax.swing.JPanel coursePanel1;
     private javax.swing.JLabel deskripsiInput;
     private javax.swing.JTextField gradeInput;
     private javax.swing.JPanel headerPanel;
@@ -642,6 +672,7 @@ public class UserHome extends javax.swing.JFrame {
     private javax.swing.JLabel mataKuliahLabel8;
     private javax.swing.JLabel mataKuliahLabel9;
     private javax.swing.JTextField namaHotelInput;
+    private javax.swing.JPanel pemesananUserPanel;
     private javax.swing.JButton pesanButton;
     private javax.swing.ButtonGroup ruangKelasGroup;
     private javax.swing.JPanel sidebarPanel;

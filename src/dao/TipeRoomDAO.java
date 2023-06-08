@@ -13,6 +13,37 @@ public class TipeRoomDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
     
+    public int getKapasitasById(int idTipeRoom){
+        con = dbCon.makeConnection();
+        
+        String sql = "SELECT kapasitas FROM tipeRoom where id = '"+idTipeRoom+"'";
+        System.out.println(sql);
+        TipeRoom g = new TipeRoom();
+        
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            
+            if(rs!=null){
+                while(rs.next()){
+                    g = new TipeRoom(rs.getInt("kapasitas"));        
+                }
+            }
+            
+                    
+
+            rs.close();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error reading database...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+        System.out.println("kapasitas : "+g.getKapasitas());
+        return g.getKapasitas();
+    }
+    
     public String getTipeRoom(int idTipeRoom){
         con = dbCon.makeConnection();
         

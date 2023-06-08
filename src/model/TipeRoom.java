@@ -12,6 +12,9 @@ public class TipeRoom {
     public TipeRoom(){
         
     }
+    public TipeRoom(int kapasitas){
+        this.kapasitas = kapasitas;
+    }
     public TipeRoom(String namaTipe){
         this.namaTipe = namaTipe;
     }

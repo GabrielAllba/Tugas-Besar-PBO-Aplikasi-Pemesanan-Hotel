@@ -2,32 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/view/admin/RegisterAdmin.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/table/TableTipeRoom.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/controller/TipeRoomControll.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/controller/HotelControll.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/table/TableTemaAndFasilitas.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/model/SubFasilitas.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/model/Grade.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/view/admin/AdminUser.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/view/adminHotel/AdminHotelTipeRoom.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/view/adminHotel/AdminHotelHome.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/controller/PemesananControll.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/view/admin/AdminHotel.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/dao/SubFasilitasDAO.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/dao/ProvinsiDAO.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/controller/ProvinsiControll.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/view/admin/AdminHome.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/dao/GradeDAO.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/model/TipeRoom.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/view/user/UserHome.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/view/user/UserPembayaran.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/view/LandingPage.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/dao/PemesananDAO.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/table/TableTemaFasilitas.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/view/adminHotel/LoginAdminHotel.java</file>
-            <file>file:/C:/1Kuliah/Atma/SEMESTER4/PRAKTIKUM_PBO/TUBES/TugasBesar/AplikasiPemesananHotel/src/dao/HotelDAO.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
