@@ -182,7 +182,7 @@ public class LoginUser extends javax.swing.JFrame {
             List<User> list = new ArrayList<User>();
             
             if (r.next()){
-                User p = new User(r.getInt("id"), r.getString("username"), r.getString("email"), r.getString("password"), r.getString("namaLengkap"), r.getString("jenisKelamin"), r.getString("tanggalLahir"), r.getString("tempatTinggal"), BigInteger.valueOf(r.getLong("saldo")));
+                User p = new User(r.getInt("id"), r.getString("username"), r.getString("email"), r.getString("password"), BigInteger.valueOf(r.getLong("saldo")));
                 JOptionPane.showMessageDialog(null, "Login berhasil");
                 this.dispose();
                 UserHome a = new UserHome();

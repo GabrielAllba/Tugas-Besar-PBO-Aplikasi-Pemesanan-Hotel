@@ -9,7 +9,9 @@ import controller.HotelControll;
 import controller.JenisHotelControll;
 import controller.SubFasilitasControl;
 import controller.UserControll;
+import java.math.BigInteger;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 import model.Hotel;
 
@@ -66,15 +68,15 @@ public class UserHome extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         pemesananUserPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        coursePanel = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        saldoInputPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         containerPanel = new javax.swing.JPanel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         headerPanel = new javax.swing.JPanel();
         titleContent = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         idUserHomeValue = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         contentPanel2 = new javax.swing.JPanel();
         namaHotelInput = new javax.swing.JTextField();
         mataKuliahLabel5 = new javax.swing.JLabel();
@@ -121,12 +123,12 @@ public class UserHome extends javax.swing.JFrame {
         lecturerPanel.setLayout(lecturerPanelLayout);
         lecturerPanelLayout.setHorizontalGroup(
             lecturerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
         );
         lecturerPanelLayout.setVerticalGroup(
             lecturerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lecturerPanelLayout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
+                .addContainerGap(63, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(50, 50, 50))
         );
@@ -159,32 +161,29 @@ public class UserHome extends javax.swing.JFrame {
                 .addGap(41, 41, 41))
         );
 
-        coursePanel.setBackground(new java.awt.Color(153, 153, 153));
-        coursePanel.addMouseListener(new java.awt.event.MouseAdapter() {
+        saldoInputPanel.setBackground(new java.awt.Color(153, 153, 153));
+        saldoInputPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                coursePanelMouseClicked(evt);
+                saldoInputPanelMouseClicked(evt);
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Profile");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Saldo");
 
-        javax.swing.GroupLayout coursePanelLayout = new javax.swing.GroupLayout(coursePanel);
-        coursePanel.setLayout(coursePanelLayout);
-        coursePanelLayout.setHorizontalGroup(
-            coursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(coursePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
-                .addContainerGap())
+        javax.swing.GroupLayout saldoInputPanelLayout = new javax.swing.GroupLayout(saldoInputPanel);
+        saldoInputPanel.setLayout(saldoInputPanelLayout);
+        saldoInputPanelLayout.setHorizontalGroup(
+            saldoInputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        coursePanelLayout.setVerticalGroup(
-            coursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, coursePanelLayout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(27, 27, 27))
+        saldoInputPanelLayout.setVerticalGroup(
+            saldoInputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, saldoInputPanelLayout.createSequentialGroup()
+                .addContainerGap(41, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(50, 50, 50))
         );
 
         javax.swing.GroupLayout sidebarPanelLayout = new javax.swing.GroupLayout(sidebarPanel);
@@ -195,8 +194,8 @@ public class UserHome extends javax.swing.JFrame {
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 12, Short.MAX_VALUE))
             .addComponent(pemesananUserPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(coursePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lecturerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(saldoInputPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         sidebarPanelLayout.setVerticalGroup(
             sidebarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,10 +204,10 @@ public class UserHome extends javax.swing.JFrame {
                 .addComponent(logo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lecturerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(coursePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(110, 110, 110)
                 .addComponent(pemesananUserPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(saldoInputPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -225,12 +224,12 @@ public class UserHome extends javax.swing.JFrame {
         titleContent.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleContent.setText("Homepage User");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel5.setText("ID User : ");
-
         idUserHomeValue.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         idUserHomeValue.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel6.setText("ID User : ");
 
         javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
         headerPanel.setLayout(headerPanelLayout);
@@ -239,23 +238,28 @@ public class UserHome extends javax.swing.JFrame {
             .addGroup(headerPanelLayout.createSequentialGroup()
                 .addComponent(titleContent, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 137, Short.MAX_VALUE))
-            .addGroup(headerPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
                 .addComponent(idUserHomeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(645, 645, 645))
+            .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(headerPanelLayout.createSequentialGroup()
+                    .addGap(20, 20, 20)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(712, Short.MAX_VALUE)))
         );
         headerPanelLayout.setVerticalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
-                .addContainerGap(59, Short.MAX_VALUE)
+                .addContainerGap(73, Short.MAX_VALUE)
                 .addComponent(titleContent)
                 .addGap(18, 18, 18)
-                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(idUserHomeValue))
-                .addGap(7, 7, 7))
+                .addComponent(idUserHomeValue)
+                .addGap(28, 28, 28))
+            .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
+                    .addContainerGap(116, Short.MAX_VALUE)
+                    .addComponent(jLabel6)
+                    .addContainerGap()))
         );
 
         contentPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -591,15 +595,14 @@ public class UserHome extends javax.swing.JFrame {
         
     }//GEN-LAST:event_pemesananUserPanelMouseClicked
 
-    private void coursePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coursePanelMouseClicked
-         this.dispose();
-         UserProfile u = new UserProfile();
-         u.setVisible(true);
-         u.idUserProfile.setText(idUserHomeValue.getText());
-         u.saldoInput.setText(""+userControl.getSaldo(Integer.valueOf(idUserHomeValue.getText())));
-//         idUserHomeValue;
-         
-    }//GEN-LAST:event_coursePanelMouseClicked
+    private void saldoInputPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saldoInputPanelMouseClicked
+        String action = "0"; // Assuming you have a default value for "action"
+        String inputValue = JOptionPane.showInputDialog(this, "Saldo anda : "+userControl.getSaldo(Integer.valueOf(idUserHomeValue.getText()))+"\nInput top up : Rp. ", action);
+        BigInteger saldoAwal = userControl.getSaldo(Integer.valueOf(idUserHomeValue.getText()));
+        
+        userControl.updateSaldo(Integer.valueOf(idUserHomeValue.getText()), saldoAwal, BigInteger.valueOf(Long.parseLong(inputValue)), "tambah");
+        JOptionPane.showMessageDialog(this, "berhasil tambah saldo");
+    }//GEN-LAST:event_saldoInputPanelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -645,15 +648,14 @@ public class UserHome extends javax.swing.JFrame {
     private javax.swing.JPanel containerPanel;
     private javax.swing.JPanel contentPanel2;
     private javax.swing.JPanel contentPanel3;
-    private javax.swing.JPanel coursePanel;
     private javax.swing.JLabel deskripsiInput;
     private javax.swing.JTextField gradeInput;
     private javax.swing.JPanel headerPanel;
     public javax.swing.JLabel idUserHomeValue;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -675,6 +677,7 @@ public class UserHome extends javax.swing.JFrame {
     private javax.swing.JPanel pemesananUserPanel;
     private javax.swing.JButton pesanButton;
     private javax.swing.ButtonGroup ruangKelasGroup;
+    private javax.swing.JPanel saldoInputPanel;
     private javax.swing.JPanel sidebarPanel;
     private javax.swing.JTable tableHotel;
     private javax.swing.JTable tableTemaAndFasilitas;

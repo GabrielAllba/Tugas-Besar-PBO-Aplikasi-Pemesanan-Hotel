@@ -4,6 +4,7 @@ import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import model.TipeRoom;
 
+
 public class TableTipeRoom extends AbstractTableModel{
     private List<TipeRoom> list;
     

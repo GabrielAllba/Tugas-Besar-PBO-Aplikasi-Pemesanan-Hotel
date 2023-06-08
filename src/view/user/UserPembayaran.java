@@ -59,6 +59,15 @@ public class UserPembayaran extends javax.swing.JFrame {
        showHotelAll();
        setDetailInputVisibility(false);
        
+       
+       lihatTipeKamarBtn.setEnabled(false);
+       tableTipeRoomPembayaran.setEnabled(false);
+       
+       setDetailInput(false);
+       pesanButton.setEnabled(false);
+       
+       
+       
        dateChooseCheckout.setEnabled(false);
        
        dateChooseCheckin.getDateEditor().addPropertyChangeListener(e -> {
@@ -100,11 +109,19 @@ public class UserPembayaran extends javax.swing.JFrame {
                 
                     daysCounter = ChronoUnit.DAYS.between(startDate, endDate);
                     daysCount.setText(""+daysCounter+" malam");
+                    
+                    lihatTipeKamarBtn.setEnabled(true);
                   
             }  
            
             
         });
+    }
+    
+    public void setDetailInput(boolean value){
+        namaLengkapInput.setEnabled(value);
+        noHandphoneInput.setEnabled(value);
+        emailInput.setEnabled(value);
     }
     
      public void showHotelAll(){
@@ -132,8 +149,6 @@ public class UserPembayaran extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         coursePanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        coursePanel = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         containerPanel = new javax.swing.JPanel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
@@ -176,7 +191,7 @@ public class UserPembayaran extends javax.swing.JFrame {
         headerPanel3 = new javax.swing.JPanel();
         mataKuliahLabel4 = new javax.swing.JLabel();
         dateChooseCheckin = new com.toedter.calendar.JDateChooser();
-        jButton1 = new javax.swing.JButton();
+        lihatTipeKamarBtn = new javax.swing.JButton();
         mataKuliahLabel2 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         tableTipeRoomPembayaran = new javax.swing.JTable();
@@ -240,29 +255,6 @@ public class UserPembayaran extends javax.swing.JFrame {
                 .addGap(41, 41, 41))
         );
 
-        coursePanel.setBackground(new java.awt.Color(153, 153, 153));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Profile");
-
-        javax.swing.GroupLayout coursePanelLayout = new javax.swing.GroupLayout(coursePanel);
-        coursePanel.setLayout(coursePanelLayout);
-        coursePanelLayout.setHorizontalGroup(
-            coursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(coursePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        coursePanelLayout.setVerticalGroup(
-            coursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, coursePanelLayout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(27, 27, 27))
-        );
-
         javax.swing.GroupLayout sidebarPanelLayout = new javax.swing.GroupLayout(sidebarPanel);
         sidebarPanel.setLayout(sidebarPanelLayout);
         sidebarPanelLayout.setHorizontalGroup(
@@ -271,7 +263,6 @@ public class UserPembayaran extends javax.swing.JFrame {
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 12, Short.MAX_VALUE))
             .addComponent(coursePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(coursePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lecturerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         sidebarPanelLayout.setVerticalGroup(
@@ -281,11 +272,9 @@ public class UserPembayaran extends javax.swing.JFrame {
                 .addComponent(logo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lecturerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(coursePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(110, 110, 110)
                 .addComponent(coursePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(402, Short.MAX_VALUE))
         );
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
@@ -573,10 +562,10 @@ public class UserPembayaran extends javax.swing.JFrame {
         mataKuliahLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         mataKuliahLabel4.setText("Tanggal Checkin");
 
-        jButton1.setText("Lihat Tipe Kamar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        lihatTipeKamarBtn.setText("Lihat Tipe Kamar");
+        lihatTipeKamarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                lihatTipeKamarBtnActionPerformed(evt);
             }
         });
 
@@ -624,7 +613,7 @@ public class UserPembayaran extends javax.swing.JFrame {
             .addGroup(headerPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(headerPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lihatTipeKamarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(headerPanel3Layout.createSequentialGroup()
                         .addGroup(headerPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(mataKuliahLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -653,7 +642,7 @@ public class UserPembayaran extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tanggalCheckoutValue)
                 .addGap(32, 32, 32)
-                .addComponent(jButton1)
+                .addComponent(lihatTipeKamarBtn)
                 .addGap(18, 18, 18)
                 .addComponent(mataKuliahLabel2)
                 .addGap(18, 18, 18)
@@ -770,6 +759,8 @@ public class UserPembayaran extends javax.swing.JFrame {
             
             System.out.println(selectedNamaTipe);
             System.out.println(selectedHarga);
+            setDetailInput(true);
+            pesanButton.setEnabled(true);
         
         }catch(InputKosongException e){
             JOptionPane.showMessageDialog(this, "Set dulu tanggal checkin dan checkout!");
@@ -781,16 +772,16 @@ public class UserPembayaran extends javax.swing.JFrame {
             throw new InputKosongException();
         }
     }
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void lihatTipeKamarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatTipeKamarBtnActionPerformed
         try{
             checkTanggalKosong();
             showSubFasilitasByHotel();
-        
+            tableTipeRoomPembayaran.setEnabled(true);
         }catch(InputKosongException e){
             JOptionPane.showMessageDialog(this, "Set dulu tanggal checkin dan checkout!");
         }catch(Exception e){};
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_lihatTipeKamarBtnActionPerformed
 
     public void InputDataPemesanException() throws InputKosongException{
         if(namaLengkapInput.getText().isEmpty() || noHandphoneInput.getText().isEmpty() || emailInput.getText().isEmpty()){
@@ -820,6 +811,7 @@ public class UserPembayaran extends javax.swing.JFrame {
             while (!currentDate.isAfter(endDate)) {
                 if(pemesananControl.countPemesananBetween(currentDate.toString(), listPesanan) == tipeRoomControl.getKapasitasById(idTipeRoom)){
                     canOrder = false;
+                    break;
                 }else{
                     if(currentDate.isEqual(endDate)){
                         canOrder = true;
@@ -915,7 +907,6 @@ public class UserPembayaran extends javax.swing.JFrame {
     public javax.swing.JTextField checkoutTime;
     private javax.swing.JPanel containerPanel;
     private javax.swing.JPanel contentPanel2;
-    private javax.swing.JPanel coursePanel;
     private javax.swing.JPanel coursePanel1;
     private com.toedter.calendar.JDateChooser dateChooseCheckin;
     private com.toedter.calendar.JDateChooser dateChooseCheckout;
@@ -928,9 +919,7 @@ public class UserPembayaran extends javax.swing.JFrame {
     private javax.swing.JPanel headerPanel3;
     public javax.swing.JLabel idHotelValuePembayaran;
     public javax.swing.JLabel idUserValuePembayaran;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -938,6 +927,7 @@ public class UserPembayaran extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JPanel lecturerPanel;
+    private javax.swing.JButton lihatTipeKamarBtn;
     private javax.swing.JLabel logo;
     public javax.swing.JTextField lokasiInput;
     private javax.swing.JLabel mataKuliahLabel10;

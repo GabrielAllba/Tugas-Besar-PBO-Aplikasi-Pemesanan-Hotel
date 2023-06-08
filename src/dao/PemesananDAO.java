@@ -55,7 +55,9 @@ public class PemesananDAO {
             Pemesanan p = list.get(i);
             LocalDate curIn = LocalDate.parse(p.getTanggalCheckin());
             LocalDate curOut = LocalDate.parse(p.getTanggalCheckout());
-            if((current.isEqual(curIn) || current.isAfter(curIn)) && (current.isEqual(curOut) || current.isBefore(curOut))){
+            
+            
+            if((current.isEqual(curIn) || current.isAfter(curIn)) && (current.isEqual(curOut) || current.isBefore(curOut)) && !current.isEqual(curIn) && !current.isEqual(curOut)){
                 counter++;
             }
             System.out.println("-------");

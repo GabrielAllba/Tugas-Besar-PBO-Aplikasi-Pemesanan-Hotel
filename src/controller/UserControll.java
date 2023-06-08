@@ -15,6 +15,10 @@ Nama : Gabriel Allba Shemi Yuma
 
 public class UserControll {
     private UserDAO pDao = new UserDAO();
+    
+    public User detailUser(int id){
+        return pDao.detailUser(id);
+    }
     public void updateSaldo(int id, BigInteger saldoAwal, BigInteger pengurangan, String tambahKurang){
         pDao.updateSaldo(id, saldoAwal,pengurangan, tambahKurang);
     }

@@ -1,6 +1,7 @@
 package dao;
 
 import connection.DbConnection;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -12,6 +13,41 @@ import model.User;
 public class UserDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
+    
+    public User detailUser(int id){
+        con = dbCon.makeConnection();
+        
+        String sql = "SELECT * FROM user where id = '"+id+"'";
+        System.out.println("in get saldo");
+        System.out.println(sql);
+        System.out.println("Mengambil data User...");
+        
+        List<User> list = new ArrayList<>();
+        
+//        public User(int id, String username, String email, String password, String namaLengkap, String jenisKelamin, String tanggalLahir, String tempatTinggal, BigInteger saldo) {
+        try{
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            BigInteger sum = BigInteger.valueOf(0);
+            if(rs!=null){
+                while(rs.next()){
+                    BigDecimal saldo = rs.getBigDecimal("saldo");
+                    User p = new User(rs.getInt("id"), rs.getString("username"),rs.getString("email"), rs.getString("password"), saldo.toBigInteger());
+                    list.add(p);
+                }
+                
+            }
+            rs.close();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error reading database...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+        
+        return list.get(0);
+    }
     
     public void updateSaldo(int id, BigInteger saldoAwal, BigInteger pengurangan, String tambahKurang){
         con = dbCon.makeConnection();
@@ -83,8 +119,7 @@ public class UserDAO {
             
             if(rs!=null){
                 while(rs.next()){
-                    User p = new User(rs.getInt("id"), rs.getString("username"), rs.getString("email"), rs.getString("password"), 
-                    rs.getString("namaLengkap"), rs.getString("jenisKelamin"), rs.getString("tanggalLahir"), rs.getString("tempatTinggal"), BigInteger.valueOf(rs.getLong("saldo")));
+                    User p = new User(rs.getInt("id"), rs.getString("username"), rs.getString("email"), rs.getString("password"),BigInteger.valueOf(rs.getLong("saldo")));
                     list.add(p);
                 }
                 
@@ -103,9 +138,8 @@ public class UserDAO {
     public void insertUser(User p){
         con = dbCon.makeConnection();
         
-        String sql = "INSERT INTO user(username, email, password, namaLengkap, jenisKelamin, tanggalLahir, tempatTinggal, saldo) "
-                + "VALUES('"+p.getUsername()+"', '"+p.getEmail()+"', '"+p.getPassword()+"', '"+p.getNamaLengkap()+"', "
-                + "'"+p.getJenisKelamin()+"', '"+p.getTanggalLahir()+"', '"+p.getTempatTinggal()+"', '"+p.getSaldo()+"')";
+        String sql = "INSERT INTO user(username, email, password, saldo) "
+                + "VALUES('"+p.getUsername()+"', '"+p.getEmail()+"', '"+p.getPassword()+"', '"+"', '"+p.getSaldo()+"')";
         System.out.println("Adding User...");
         System.out.println(sql);
         
@@ -135,8 +169,7 @@ public class UserDAO {
             
             if(rs!=null){
                 while(rs.next()){
-                    User p = new User(rs.getInt("id"), rs.getString("username"), rs.getString("email"), rs.getString("password"), 
-                    rs.getString("namaLengkap"), rs.getString("jenisKelamin"), rs.getString("tanggalLahir"), rs.getString("tempatTinggal"), BigInteger.valueOf(rs.getLong("saldo")));
+                    User p = new User(rs.getInt("id"), rs.getString("username"), rs.getString("email"), rs.getString("password"), BigInteger.valueOf(rs.getLong("saldo")));
                     list.add(p);
                 }
                 
@@ -158,7 +191,7 @@ public class UserDAO {
     public void updateUser(User p){
         con = dbCon.makeConnection();
         
-        String sql = "UPDATE user set username = '"+p.getUsername()+"', email = '"+p.getEmail()+"', password = '"+p.getPassword()+"', namaLengkap = '"+p.getNamaLengkap()+"', jenisKelamin = '"+p.getJenisKelamin()+"', tanggalLahir = '"+p.getTanggalLahir()+"', tempatTinggal = '"+p.getTempatTinggal()+"', saldo = '"+p.getSaldo()+"'";        
+        String sql = "UPDATE user set username = '"+p.getUsername()+"', email = '"+p.getEmail()+"', password = '"+p.getPassword()+"', saldo = '"+p.getSaldo()+"'";        
         System.out.println(sql);
         System.out.println("Editing User...");
         
@@ -174,6 +207,7 @@ public class UserDAO {
         
         dbCon.closeConnection();
     }
+
     
     public void deleteUser(int id){
         con = dbCon.makeConnection();

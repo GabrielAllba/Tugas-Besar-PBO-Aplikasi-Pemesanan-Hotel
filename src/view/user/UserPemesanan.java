@@ -82,8 +82,6 @@ public class UserPemesanan extends javax.swing.JFrame {
         IconLabel = new javax.swing.JLabel();
         HomePanel = new javax.swing.JPanel();
         HomeLabel = new javax.swing.JLabel();
-        HomePanel1 = new javax.swing.JPanel();
-        HomeLabel1 = new javax.swing.JLabel();
         HomePanel2 = new javax.swing.JPanel();
         HomeLabel2 = new javax.swing.JLabel();
         containerPanel = new javax.swing.JPanel();
@@ -155,30 +153,6 @@ public class UserPemesanan extends javax.swing.JFrame {
                 .addContainerGap(71, Short.MAX_VALUE))
         );
 
-        HomePanel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                HomePanel1MouseClicked(evt);
-            }
-        });
-
-        HomeLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        HomeLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        HomeLabel1.setText("Profile");
-
-        javax.swing.GroupLayout HomePanel1Layout = new javax.swing.GroupLayout(HomePanel1);
-        HomePanel1.setLayout(HomePanel1Layout);
-        HomePanel1Layout.setHorizontalGroup(
-            HomePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(HomeLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        HomePanel1Layout.setVerticalGroup(
-            HomePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HomePanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(HomeLabel1)
-                .addContainerGap(71, Short.MAX_VALUE))
-        );
-
         HomePanel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 HomePanel2MouseClicked(evt);
@@ -208,9 +182,7 @@ public class UserPemesanan extends javax.swing.JFrame {
         sidePanelLayout.setHorizontalGroup(
             sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(IconLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                .addComponent(HomePanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(HomePanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(HomePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(HomePanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         sidePanelLayout.setVerticalGroup(
@@ -219,9 +191,7 @@ public class UserPemesanan extends javax.swing.JFrame {
                 .addComponent(IconLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(HomePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(HomePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(156, 156, 156)
                 .addComponent(HomePanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -585,14 +555,6 @@ public class UserPemesanan extends javax.swing.JFrame {
         
     }//GEN-LAST:event_HomePanel2MouseClicked
 
-    private void HomePanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomePanel1MouseClicked
-         this.dispose();
-         UserProfile u = new UserProfile();
-         u.setVisible(true);
-         u.idUserProfile.setText(idUserInputInPemesananUser.getText());
-         u.saldoInput.setText(""+userControl.getSaldo(Integer.valueOf(idUserInputInPemesananUser.getText())));
-    }//GEN-LAST:event_HomePanel1MouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -646,10 +608,8 @@ public class UserPemesanan extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel FormInputPanel;
     private javax.swing.JLabel HomeLabel;
-    private javax.swing.JLabel HomeLabel1;
     private javax.swing.JLabel HomeLabel2;
     private javax.swing.JPanel HomePanel;
-    private javax.swing.JPanel HomePanel1;
     private javax.swing.JPanel HomePanel2;
     private javax.swing.JLabel IconLabel;
     private javax.swing.JLabel KapasitasLabel;
