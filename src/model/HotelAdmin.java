@@ -12,6 +12,11 @@ public class HotelAdmin {
     public HotelAdmin(){
         
     }
+    
+    public HotelAdmin(BigInteger pemasukan){
+        this.pemasukan = pemasukan;
+    }
+    
     public HotelAdmin(int id, String username, String email, String password, BigInteger pemasukan) {
         this.id = id;
         this.username = username;
@@ -59,10 +64,6 @@ public class HotelAdmin {
     public void setPemasukan(BigInteger pemasukan) {
         this.pemasukan = pemasukan;
     }
-    
-    
-    
-    
     @Override
     public String toString(){
         return username;

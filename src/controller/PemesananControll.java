@@ -18,6 +18,11 @@ Nama : Gabriel Allba Shemi Yuma
 public class PemesananControll {
     private PemesananDAO pDao = new PemesananDAO();
     
+    public List<Pemesanan> search(int idHotel, String query){
+        return pDao.search(idHotel, query);
+    
+    }
+    
     public void insertDataPemesanan(Pemesanan p){
         pDao.insertPemesanan(p);
     }
@@ -26,8 +31,8 @@ public class PemesananControll {
         return pDao.countPendapatanByIdHotel(idHotel);
     }
     
-    public int countPemesananBetween(String currentDate, List<Pemesanan> list){
-        return pDao.countPemesananBetween(currentDate, list);
+    public int countPemesananBetween(String currentDate, List<Pemesanan> list, long totalDays){
+        return pDao.countPemesananBetween(currentDate, list, totalDays);
     }
     
     public TablePemesanan showPemesanan(String query){

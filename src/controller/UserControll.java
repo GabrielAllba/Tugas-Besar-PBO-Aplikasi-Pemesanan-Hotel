@@ -16,6 +16,10 @@ Nama : Gabriel Allba Shemi Yuma
 public class UserControll {
     private UserDAO pDao = new UserDAO();
     
+     public List<User> search(String query){
+        return pDao.search(query);
+    }
+    
     public User detailUser(int id){
         return pDao.detailUser(id);
     }

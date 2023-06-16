@@ -14,6 +14,37 @@ public class UserDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
     
+    public List<User> search(String query){
+        con = dbCon.makeConnection();
+        
+        String sql = "SELECT * FROM user WHERE id LIKE '%"+query+"%' OR username LIKE '%" + query + "%' OR email LIKE '%"+query+"%'";
+
+        System.out.println(sql);
+        List<User> d = new ArrayList<User>();
+        
+        try{
+            
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            
+            if(rs !=null){
+                while(rs.next()){
+                    User p = new User(rs.getInt("id"), rs.getString("username"),rs.getString("email"),rs.getString("password"), BigInteger.valueOf(rs.getLong("saldo")));
+                    d.add(p);
+                }
+            }
+            rs.close();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error reading database...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+        return d;
+    
+    }
+    
     public User detailUser(int id){
         con = dbCon.makeConnection();
         

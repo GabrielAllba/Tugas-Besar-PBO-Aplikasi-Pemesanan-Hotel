@@ -9,11 +9,43 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import model.Pemesanan;
+import model.TipeRoom;
 import java.math.BigDecimal;
 
 public class PemesananDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
+    
+    public List<Pemesanan> search(int idHotel, String query){
+        con = dbCon.makeConnection();
+        
+        String sql = "SELECT * FROM pemesanan WHERE id_hotel = '" + idHotel + "' AND (id LIKE '%"+query+"%' OR tanggalCheckin LIKE '%" + query + "%' OR tanggalCheckout LIKE '%" + query + "%' OR pembayaran LIKE '%" + query + "%')";
+
+        System.out.println(sql);
+        List<Pemesanan> d = new ArrayList<Pemesanan>();
+        
+        try{
+            
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            
+            if(rs !=null){
+                while(rs.next()){
+                    Pemesanan p = new Pemesanan(rs.getInt("id"), rs.getInt("id_user"),rs.getInt("id_hotel"), rs.getInt("id_tipe_room"), rs.getString("tanggalCheckin"),rs.getString("tanggalCheckout"),rs.getString("namaLengkap"), rs.getString("noHandphone"), rs.getString("email"), BigInteger.valueOf(rs.getLong("pembayaran")));
+                    d.add(p);
+                }
+            }
+            rs.close();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error reading database...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+        return d;
+    
+    }
     
     public BigInteger countPendapatanByIdHotel(int idHotel){
              con = dbCon.makeConnection();
@@ -24,7 +56,6 @@ public class PemesananDAO {
 
            
            BigInteger sum = BigInteger.valueOf(0);
-           System.out.println("demus kontol");
            try{
                Statement statement = con.createStatement();
                ResultSet rs = statement.executeQuery(sql);
@@ -47,23 +78,29 @@ public class PemesananDAO {
            return sum;
     }
     
-    public int countPemesananBetween(String currentDate, List<Pemesanan> list){
+    public int countPemesananBetween(String currentDate, List<Pemesanan> list, long countDays){
         LocalDate current = LocalDate.parse(currentDate);
         
         int counter=0;
+        
         for (int i = 0; i < list.size(); i++) {
             Pemesanan p = list.get(i);
             LocalDate curIn = LocalDate.parse(p.getTanggalCheckin());
             LocalDate curOut = LocalDate.parse(p.getTanggalCheckout());
-            
-            
-            if((current.isEqual(curIn) || current.isAfter(curIn)) && (current.isEqual(curOut) || current.isBefore(curOut)) && !current.isEqual(curIn) && !current.isEqual(curOut)){
-                counter++;
-            }
-            System.out.println("-------");
-            System.out.println(p.getId());
+//            if(countDays <= 1){
+//                if((current.isEqual(curIn) || current.isAfter(curIn)) && (current.isEqual(curOut) || current.isBefore(curOut))){
+//                   counter++;
+//                   System.out.println("WOYYYYYY");
+//                }
+//            }else{
+                if((current.isEqual(curIn) || current.isAfter(curIn)) && (current.isEqual(curOut) || current.isBefore(curOut)) && !current.isEqual(curIn) && !current.isEqual(curOut)){
+                   counter++;
+//                System.out.println("WOYYYYYY");
+//                }
+                }
         }
-        System.out.println("counter : "+counter);
+        
+        System.out.println("counter in method : "+counter);
         
         return counter;
     }

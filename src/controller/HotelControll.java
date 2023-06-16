@@ -26,6 +26,13 @@ public class HotelControll {
         return pDao.checkIdHotelAdmin(idHotel);
     }
     
+    public TableHotel showHotelAlsoUnverified(String query){
+        List<Hotel> dataHotel = pDao.showHotelAlsoUnverified(query);
+        TableHotel tableHotel = new TableHotel(dataHotel);
+        
+        return tableHotel;
+    }
+    
     public TableHotel showHotel(String query){
         List<Hotel> dataHotel = pDao.showHotel(query);
         TableHotel tableHotel = new TableHotel(dataHotel);

@@ -15,6 +15,10 @@ Nama : Gabriel Allba Shemi Yuma
 public class TipeRoomControll {
     private TipeRoomDAO pDao = new TipeRoomDAO();
     
+    public List<TipeRoom> search(String idHotel, String query){
+        return pDao.search(idHotel, query);
+    }
+    
     public int getKapasitasById(int idTipeRoom){
         return pDao.getKapasitasById(idTipeRoom);
     }
@@ -50,4 +54,6 @@ public class TipeRoomControll {
         List<TipeRoom> dataTipeRoom = pDao.showTipeRoom("");
         return dataTipeRoom;
     }
+    
+    
 }

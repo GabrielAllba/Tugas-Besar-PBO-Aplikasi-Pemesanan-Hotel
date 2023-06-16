@@ -1,6 +1,7 @@
 package dao;
 
 import connection.DbConnection;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -12,6 +13,44 @@ import model.TipeRoom;
 public class TipeRoomDAO {
     private DbConnection dbCon = new DbConnection();
     private Connection con;
+    
+    public List<TipeRoom> search(String idHotel, String query){
+        con = dbCon.makeConnection();
+        
+        String sql = "SELECT * FROM tiperoom WHERE id_hotel = '" + idHotel + "' AND (id LIKE '%"+query+"%' OR namaTipe LIKE '%" + query + "%' OR kapasitas LIKE '%" + query + "%' OR harga LIKE '%" + query + "%')";
+
+        System.out.println(sql);
+        List<TipeRoom> d = new ArrayList<TipeRoom>();
+        
+        try{
+            
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            
+            if(rs !=null){
+                while(rs.next()){
+                    TipeRoom x = new TipeRoom(
+                            rs.getInt("id"),
+                            rs.getInt("id_hotel"),
+                            rs.getString("namaTipe"),
+                            rs.getInt("kapasitas"),
+                            BigInteger.valueOf(rs.getLong("harga"))
+                    );
+                    
+                    d.add(x);
+                }
+            }
+            rs.close();
+            statement.close();
+        }catch(Exception e){
+            System.out.println("Error reading database...");
+            System.out.println(e);
+        }
+        
+        dbCon.closeConnection();
+        return d;
+    
+    }
     
     public int getKapasitasById(int idTipeRoom){
         con = dbCon.makeConnection();
